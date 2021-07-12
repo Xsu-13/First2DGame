@@ -1,0 +1,1116 @@
+fileFormatVersion: 2
+guid: 25ca3217d66c0cc43a058731d16685bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -515161996741965240
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_0
+  - first:
+      213: -321953874114766670
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_1
+  - first:
+      213: -3184406539247891087
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_2
+  - first:
+      213: 8076420541311800887
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_3
+  - first:
+      213: 2193856627633378536
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_4
+  - first:
+      213: 3440209147665482553
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_5
+  - first:
+      213: 1732384157486506419
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_6
+  - first:
+      213: -5908885150151009836
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_7
+  - first:
+      213: 8023388663546585263
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_8
+  - first:
+      213: -4993157129895488127
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_9
+  - first:
+      213: -145557576837440694
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_10
+  - first:
+      213: 5359994556216576423
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_11
+  - first:
+      213: 2364315418258345302
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_12
+  - first:
+      213: 396727266748611493
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_13
+  - first:
+      213: 2310449108358242124
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_14
+  - first:
+      213: 364103845162003881
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_15
+  - first:
+      213: 7879605223114257726
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_16
+  - first:
+      213: 5436525879995490298
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_17
+  - first:
+      213: 6516910386184936830
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_18
+  - first:
+      213: 3380815983761245694
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_19
+  - first:
+      213: 1539058017364000849
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_20
+  - first:
+      213: -2409150609107709614
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_21
+  - first:
+      213: 7929068638520944918
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_22
+  - first:
+      213: -7614514630255603979
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_23
+  - first:
+      213: 3618893425223156737
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_24
+  - first:
+      213: 1483236543046559540
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_25
+  - first:
+      213: -707712958952800854
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_26
+  - first:
+      213: -7849247606237525222
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_27
+  - first:
+      213: -5447882517925364496
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_28
+  - first:
+      213: -4686899783914842209
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_29
+  - first:
+      213: 609100036981409859
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_30
+  - first:
+      213: 6877704508221422526
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_31
+  - first:
+      213: 4293430806284310730
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_32
+  - first:
+      213: -2892408511945173747
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_33
+  - first:
+      213: 1914661596608462318
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_34
+  - first:
+      213: -2994846467718872237
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_35
+  - first:
+      213: 7492924244134553777
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_36
+  - first:
+      213: -8166373080262090288
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_37
+  - first:
+      213: -6256967200312083097
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_38
+  - first:
+      213: -2833480205051405194
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_39
+  - first:
+      213: -7184951817360750461
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_40
+  - first:
+      213: -2213358530323811548
+    second: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_41
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 224
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a0a66b4e6c9d8f0800000000000000
+      internalID: -515161996741965240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 204
+        width: 86
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8145348a0388bf0800000000000000
+      internalID: -321953874114766670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 219
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dc2bfcf17bec3d0800000000000000
+      internalID: -3184406539247891087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 216
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736de8d01b5351070800000000000000
+      internalID: 8076420541311800887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 214
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e45932baf4227e10800000000000000
+      internalID: 2193856627633378536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 112
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93386a72ef31ebf20800000000000000
+      internalID: 3440209147665482553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 109
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b16f71763aaa0810800000000000000
+      internalID: 1732384157486506419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 107
+        width: 76
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d91ba6334c6ffda0800000000000000
+      internalID: -5908885150151009836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_8
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 102
+        width: 90
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa02791da7dc85f60800000000000000
+      internalID: 8023388663546585263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_9
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 112
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185ded49b0eb4bab0800000000000000
+      internalID: -4993157129895488127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_10
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 169
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bdc32b720eafdf0800000000000000
+      internalID: -145557576837440694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_11
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 101
+        width: 85
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9015186a6826a40800000000000000
+      internalID: 5359994556216576423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_12
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 175
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d8442a85cbfc020800000000000000
+      internalID: 2364315418258345302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_13
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 160
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab334fd855718500800000000000000
+      internalID: 396727266748611493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_14
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 111
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f9f47093d501020800000000000000
+      internalID: 2310449108358242124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 156
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad2c30a48e8d0500800000000000000
+      internalID: 364103845162003881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_16
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 104
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35b906d33bf95d60800000000000000
+      internalID: 7879605223114257726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_17
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 102
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff5951eb7b627b40800000000000000
+      internalID: 5436525879995490298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d5b99d777b07a50800000000000000
+      internalID: 6516910386184936830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 81
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef54d0399321bee20800000000000000
+      internalID: 3380815983761245694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 81
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150c2bdcc15db5510800000000000000
+      internalID: 1539058017364000849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 73
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25118b5094af09ed0800000000000000
+      internalID: -2409150609107709614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_22
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 74
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6192bbeaae5b90e60800000000000000
+      internalID: 7929068638520944918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_23
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 76
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe8996894fc35690800000000000000
+      internalID: -7614514630255603979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 70
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1044c628564e83230800000000000000
+      internalID: 3618893425223156737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_25
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 66
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4372b2207c3859410800000000000000
+      internalID: 1483236543046559540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_26
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 60
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad7dae30d2bd26f0800000000000000
+      internalID: -707712958952800854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_27
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 50
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b8024a3eed11390800000000000000
+      internalID: -7849247606237525222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_28
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 52
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc7ffcc6bb3564b0800000000000000
+      internalID: -5447882517925364496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_29
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 37
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9796e19a79c4feb0800000000000000
+      internalID: -4686899783914842209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_30
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34844f8a145f37800800000000000000
+      internalID: 609100036981409859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_31
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbf3a28fc3827f50800000000000000
+      internalID: 6877704508221422526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_32
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 28
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac89b4c1294559b30800000000000000
+      internalID: 4293430806284310730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_33
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 21
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05113478c91cd7d0800000000000000
+      internalID: -2892408511945173747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_34
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedfdeae39e329a10800000000000000
+      internalID: 1914661596608462318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_35
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 14
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35388c6410b2076d0800000000000000
+      internalID: -2994846467718872237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_36
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 10
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b86d8c96e63cf760800000000000000
+      internalID: 7492924244134553777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d16aa763f63bae80800000000000000
+      internalID: -8166373080262090288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_38
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 5
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76db02e6b79ca29a0800000000000000
+      internalID: -6256967200312083097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_39
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 12
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c5fc314c47da8d0800000000000000
+      internalID: -2833480205051405194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_40
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 3
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3884aedb36ce94c90800000000000000
+      internalID: -7184951817360750461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngjoy.com_green-explosion-damage-effect-sprite-sheet-png-download_3381273_41
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423f77fb4229841e0800000000000000
+      internalID: -2213358530323811548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b0d007204422d91499161cb9dee1fb46
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
