@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] float agroRange = 3;
     [SerializeField] float speed = 1;
+    [SerializeField] float rayDist = 2f;
+    private bool movingRight = false;
+    public Transform groungDetection;
     GameObject player;
     Rigidbody2D rb;
     bool isFacingLeft;
@@ -40,9 +43,25 @@ public class Enemy : MonoBehaviour
     {
         float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (canSee(agroRange))
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groungDetection.position, Vector2.down, rayDist);
+
+        if (groundInfo.collider == false)
+        {
+            if (movingRight)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+                movingRight = false;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                movingRight = true;
+            }
+        }
+        /*if (canSee(agroRange))
             ChasePlayer();
-        else StopChasingPlayer();
+        else StopChasingPlayer();*/
 
         //if (health >= 0)
             //Instantiate(sphere, spawner.transform.position, spawner.transform.rotation);

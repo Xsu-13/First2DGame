@@ -7,17 +7,18 @@ public class PlayerHealth : MonoBehaviour
     private int maxHelth = 300;
     public int currentHelth;
     public HealthBar healthBar;
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHelth = maxHelth;
         healthBar.SetMaxHealth(maxHelth);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        /*if (Input.GetKeyDown(KeyCode.Space))
+            TakeDamage(50);*/
     }
     void TakeDamage(int damage)
     {
