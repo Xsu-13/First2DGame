@@ -55,22 +55,22 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Attack");
             //Attack();
         }
-        /*if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             animator.ResetTrigger("Attack");
-        }*/
+        }
 
-        if (Input.GetMouseButtonDown(1) && LeftClickWasClicked == true )//&& attackTimer<=0)
+         if (Input.GetMouseButtonDown(1) && LeftClickWasClicked == true )//&& attackTimer<=0)
         {
             LeftClickWasClicked = false;
             
             animator.SetTrigger("Attack");
             //Attack();
         }
-        /*if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1))
         {
             animator.ResetTrigger("Attack");
-        }*/
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && gcheck.isGrounded == true)
         {
@@ -105,7 +105,6 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         animator.SetTrigger("Jump");
-        Debug.Log("Jump!");
         rb.velocity = Vector2.up * jumpForce;
         
     }

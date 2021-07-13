@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyMovement : MonoBehaviour
-{    
+{
     Vector2 movementInput;
-    public Rigidbody2D rb;
-    public float speed = 3f;
-    public Camera cam;
+    private Rigidbody2D rb;
+    [SerializeField] private float speed = 3f;
     bool LeftClickWasClicked = false;
     public GameObject shere;
     public GameObject spawner;
+
+   
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+
+        
     }
 
     private void Update()
@@ -55,8 +58,10 @@ public class FlyMovement : MonoBehaviour
 
     void MoveCharacter(Vector2 diraction)
     {
-        
-        rb.MovePosition(new Vector2(transform.position.x + 0.015f  + diraction.x*speed*Time.deltaTime, transform.position.y + diraction.y * speed * Time.deltaTime));
+        Vector2 pos = transform.position;
+        Vector2 camPos = Camera.main.transform.position;
+
+        rb.MovePosition(new Vector2(pos.x + 0.015f + diraction.x * speed * Time.deltaTime, pos.y + diraction.y * speed * Time.deltaTime));
     }
 
 }
