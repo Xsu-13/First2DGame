@@ -5,12 +5,28 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
-    
+    public GameObject item
+    {
+        get 
+        {
+            if (transform.childCount > 0)
+            {                
+                return transform.GetChild(0).gameObject;
+            }
+            return null;
+        }
+
+    }
+    public bool SlotIsEmpty = true;
+
+
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("Drop");
-        if (eventData.pointerDrag != null)
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        /*if (!item)
+        {           
+            DragDrop.itemBeingDrages.transform.SetParent(transform);
+            
+        }  */ 
     }
 
 }
