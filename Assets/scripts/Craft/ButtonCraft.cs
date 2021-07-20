@@ -16,6 +16,7 @@ public class ButtonCraft : MonoBehaviour
     [SerializeField] Transform[] slots;
     [SerializeField] bool isEmpty;
     [SerializeField] Sprite emptySprite;
+    int localIndex;
     void Start()
     {
         isEmpty = true;
@@ -116,13 +117,14 @@ public class ButtonCraft : MonoBehaviour
     void Change(int index)
     {       
         createdPotion.GetComponent<Image>().sprite = sprites[index].GetComponent<Image>().sprite;
+        this.localIndex = index;
         Invoke("Hide", 2f);
-        sprites[index].GetComponent<Potion>().count += 1;
     }
-    void Hide()
+
+    void  Hide()
     {
         createdPotion.GetComponent<Image>().sprite = emptySprite;
-        
+        sprites[this.localIndex].GetComponent<Potion>().count += 1;
     }
 }
 
