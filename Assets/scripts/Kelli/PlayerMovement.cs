@@ -17,84 +17,91 @@ public class PlayerMovement : MonoBehaviour
     public GroundCheck gcheck;
     public GameObject shere;
     public GameObject spawner;
+    KelliController controller;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        controller = GetComponent<KelliController>();
     }
 
 
     void FixedUpdate()
     {
-
-        horizontalMove.x = Input.GetAxis("Horizontal");
-        if (horizontalMove.x != 0)
+        if (controller.craftIsActive)
         {
-            animator.SetTrigger("run");
-            if (horizontalMove.x > 0)
+            return;
+        }
+        else
+        {
+            horizontalMove.x = Input.GetAxis("Horizontal");
+            if (horizontalMove.x != 0)
             {
-                transform.localScale = new Vector2(1f, 1f);
+                animator.SetTrigger("run");
+                if (horizontalMove.x > 0)
+                {
+                    transform.localScale = new Vector2(1f, 1f);
+                }
+                else
+                {
+                    transform.localScale = new Vector2(-1f, 1f);
+                }
             }
-            else
+            else animator.ResetTrigger("run");
+            animator.SetFloat("speed", Mathf.Abs(horizontalMove.x));
+
+            if (canMove)
+                rb.velocity = new Vector2(horizontalMove.x * speed, rb.velocity.y);
+
+
+            if (Input.GetMouseButtonDown(0) && LeftClickWasClicked == false)
             {
-                transform.localScale = new Vector2(-1f, 1f);
+                LeftClickWasClicked = true;
+
+                animator.SetTrigger("Attack");
+                //Attack();
             }
+            if (Input.GetMouseButtonUp(0))
+            {
+                animator.ResetTrigger("Attack");
+            }
+
+            if (Input.GetMouseButtonDown(1) && LeftClickWasClicked == true)//&& attackTimer<=0)
+            {
+                LeftClickWasClicked = false;
+
+                animator.SetTrigger("Attack");
+                //Attack();
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                animator.ResetTrigger("Attack");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && gcheck.isGrounded == true)
+            {
+                jump = true;
+                Jump();
+
+            }
+
+            if (Input.GetKey(KeyCode.S) && gcheck.isGrounded == true)
+            {
+                animator.SetTrigger("Sqade");
+                canMove = false;
+            }
+
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                animator.ResetTrigger("Sqade");
+                canMove = true;
+            }
+
+            if (attack == true)
+                Attack();
+
         }
-        else animator.ResetTrigger("run");
-        animator.SetFloat("speed", Mathf.Abs(horizontalMove.x));
-
-        if (canMove)
-            rb.velocity = new Vector2(horizontalMove.x*speed, rb.velocity.y);
-
-
-        if (Input.GetMouseButtonDown(0) && LeftClickWasClicked == false)
-        {
-            LeftClickWasClicked = true;
-            
-            animator.SetTrigger("Attack");
-            //Attack();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.ResetTrigger("Attack");
-        }
-
-         if (Input.GetMouseButtonDown(1) && LeftClickWasClicked == true )//&& attackTimer<=0)
-        {
-            LeftClickWasClicked = false;
-            
-            animator.SetTrigger("Attack");
-            //Attack();
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            animator.ResetTrigger("Attack");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && gcheck.isGrounded == true)
-        {
-            jump = true;
-            Jump();
-            
-        }
-
-        if (Input.GetKey(KeyCode.S) && gcheck.isGrounded == true)
-        {
-            animator.SetTrigger("Sqade");
-            canMove = false;
-        }
-
-        if(Input.GetKeyUp(KeyCode.S))
-        {
-            animator.ResetTrigger("Sqade");
-            canMove = true;
-        }
-
-        if (attack == true)
-           Attack();
-
-
     }
 
     void Attack()

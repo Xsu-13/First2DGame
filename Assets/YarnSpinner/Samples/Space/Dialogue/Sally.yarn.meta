@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 8b6ae1e8d32e840f0b3fd0b033e52253
 ScriptedImporter:
-  fileIDToRecycleName:
-    4900000: Strings
-    11400000: Program
+  internalIDToNameTable:
+  - first:
+      49: 4900000
+    second: Strings
+  - first:
+      114: 11400000
+    second: Program
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -31,7 +36,8 @@ ScriptedImporter:
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 'Error on line 23 at position 1:
 
-    missing COMMAND_ENDIF at ''===''
+    missing COMMAND_ENDIF
+    at ''===''
 
     ===
 

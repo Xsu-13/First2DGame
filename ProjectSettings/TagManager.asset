@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - scoreValue
   - wayPoints
+  - ingredient
   layers:
   - Default
   - TransparentFX

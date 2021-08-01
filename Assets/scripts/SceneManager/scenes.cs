@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Yarn.Unity;
 public class scenes : MonoBehaviour
 {
     public Button FlyButton;
     public Button PlatformerButton;
-    
+    [SerializeField] GameObject optionPanel;
+    [SerializeField] DialogueRunner dilR;
     void Start()
     {
         PlatformerButton.onClick.AddListener(RunOn);
@@ -27,5 +29,21 @@ public class scenes : MonoBehaviour
     void RunOn()
     {
         SceneManager.LoadScene("Demo");
+    }
+
+    public void OptionActive()
+    {
+        optionPanel.SetActive(true);
+    }
+
+    public void OptionLRu()
+    {
+        dilR.textLanguage = "ru";
+        optionPanel.SetActive(false);
+    }
+    public void OptionLEn()
+    {
+        dilR.textLanguage = "en";
+        optionPanel.SetActive(false);
     }
 }

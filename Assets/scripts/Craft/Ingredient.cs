@@ -9,6 +9,8 @@ public class Ingredient : MonoBehaviour
     public int count;
     public TMP_Text countText;
     public Transform startParent;
+    // должен оставаться public
+    public Type type;
 
     private void Start()
     {
@@ -19,5 +21,11 @@ public class Ingredient : MonoBehaviour
     private void Update()
     {
         countText.text = count.ToString();
+    }
+
+    public enum Type
+    {
+        flyAway,
+        invisiblePotion
     }
 }

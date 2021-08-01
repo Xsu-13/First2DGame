@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2d77c9ff939d39c46a7e673a47c9674c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: ru-RU
+  stringIDs:
+  - WaitingRoom-WaitingRoom-0
+  - WaitingRoom-WaitingRoom-1
+  - WaitingRoom-WaitingRoom-2
+  - WaitingRoom-WaitingRoom-3
+  - WaitingRoom-WaitingRoom-4
+  - WaitingRoom-WaitingRoom-5
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 2d77c9ff939d39c46a7e673a47c9674c, type: 3}
+  localizations: []

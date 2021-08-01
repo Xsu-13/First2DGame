@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: dde44bdaf3c4bf14d858fd331dbd0ed2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: ru-RU
+  stringIDs:
+  - Ticket-Ticket-0
+  - Ticket-Ticket-1
+  - Ticket-Ticket-2
+  - Ticket-Ticket-3
+  - Ticket-Ticket-4
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: dde44bdaf3c4bf14d858fd331dbd0ed2, type: 3}
+  localizations: []
