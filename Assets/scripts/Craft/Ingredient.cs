@@ -9,6 +9,8 @@ public class Ingredient : MonoBehaviour
     public int count;
     public TMP_Text countText;
     public Transform startParent;
+    public string Name;
+    public bool inCreateSlot = false;
     // должен оставаться public
     public Type type;
 

@@ -14,7 +14,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public static GameObject itemBeingDrages;
     [SerializeField] Transform[] slots;
     Ingredient ingredientScript;
-    GameObject ingr;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -49,33 +48,40 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
     public void OnPointerDown(PointerEventData eventdata)
     {
-
-        GameObject ingr = transform.GetChild(0).gameObject;
-        ingredientScript = ingr.GetComponent<Ingredient>();
-
-        if (ingredientScript.count > 0)
+        if (transform.childCount > 0)
         {
-
-            if (slots[0].GetComponent<ItemSlot>().SlotIsEmpty)
+            GameObject ingr = transform.GetChild(0).gameObject;
+            ingredientScript = ingr.GetComponent<Ingredient>();
+            if (ingredientScript.count > 0)
             {
-                ingr.transform.SetParent(slots[0]);
-                slots[0].GetComponent<Image>().sprite = transform.GetComponent<Image>().sprite;
-                slots[0].GetComponent<ItemSlot>().SlotIsEmpty = false;
-                ingredientScript = ingr.GetComponent<Ingredient>();
-                ingredientScript.count -= 1;
 
+                if (slots[0].GetComponent<ItemSlot>().SlotIsEmpty)
+                {
+                    //ѕовторение кода/»справить.
+                    ingr.transform.SetParent(slots[0]);
+                    slots[0].GetComponent<Image>().sprite = transform.GetComponent<Image>().sprite;
+                    slots[0].GetComponent<ItemSlot>().SlotIsEmpty = false;
+                    ingredientScript = ingr.GetComponent<Ingredient>();
+                    ingredientScript.count -= 1;
+                    //ingredientScript.inCreateSlot = true;
+
+                }
+                else if (slots[1].GetComponent<ItemSlot>().SlotIsEmpty)
+                {
+                    ingr.transform.SetParent(slots[1]);
+                    slots[1].GetComponent<Image>().sprite = transform.GetComponent<Image>().sprite;
+                    slots[1].GetComponent<ItemSlot>().SlotIsEmpty = false;
+                    ingredientScript = ingr.GetComponent<Ingredient>();
+                    ingredientScript.count -= 1;
+                    //ingredientScript.inCreateSlot = true;
+                }
+                else Debug.Log("Busy!");
             }
-            else if (slots[1].GetComponent<ItemSlot>().SlotIsEmpty)
-            {
-                ingr.transform.SetParent(slots[1]);
-                slots[1].GetComponent<Image>().sprite = transform.GetComponent<Image>().sprite;
-                slots[1].GetComponent<ItemSlot>().SlotIsEmpty = false;
-                ingredientScript = ingr.GetComponent<Ingredient>();
-                ingredientScript.count -= 1;
-            }
-            else Debug.Log("Busy!");
+            else Debug.Log("недостаточно ингредиентов");
         }
-        else Debug.Log("недостаточно ингредиентов");
+        
+
+        
     }
 
     public void OnDrop(PointerEventData eventData)

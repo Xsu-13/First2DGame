@@ -54,9 +54,7 @@ public class ButtonCraft : MonoBehaviour
             {
                 createdPotion.SetActive(true);
 
-                Debug.Log(Sum);
                 //Показать зелья в зависимости от полученной суммы
-
                 switch (Sum)
                 {
                     case 2:

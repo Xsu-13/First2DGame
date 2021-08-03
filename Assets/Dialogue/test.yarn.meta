@@ -10,16 +10,18 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: ru-RU
   stringIDs:
-  - test-Start-0
-  - test-Start-1
-  - test-Start-2
-  - test-Start-3
-  - test-Start-4
-  - test-Start-5
-  - test-Start-6
-  - test-Start-7
-  compilationStatus: 1
+  - line:0df0993
+  - line:062ecf0
+  - line:0d36b7b
+  - line:0dd035b
+  - line:0f4c19a
+  - line:0f29f74
+  - line:0f31594
+  - line:0b2352f
+  compilationStatus: 0
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
   baseLanguage: {fileID: 7128917941130120860, guid: adebaeb281ba920418520fbb3c57d3f2, type: 3}
-  localizations: []
+  localizations:
+  - languageName: en
+    text: {fileID: 4900000, guid: 0d710ec7bc8b4f8438ddcbae127a0e92, type: 3}

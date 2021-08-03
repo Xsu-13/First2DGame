@@ -11,6 +11,7 @@ public class NPC : MonoBehaviour
     [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] SpeakerData speakerData;
     [SerializeField] DialogUI dialog;
+    bool start = true;
     void Start()
     {
         chat.SetActive(false);
@@ -26,10 +27,19 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            dialogueRunner.StartDialogue(yarnStartNode);
-            dialog.AddSpeaker(speakerData);
+            if (Input.GetKeyDown(KeyCode.Space) && start)
+            {
+                dialogueRunner.StartDialogue(yarnStartNode);
+                dialog.AddSpeaker(speakerData);
+                start = false;
+            }
         }
     }
 }

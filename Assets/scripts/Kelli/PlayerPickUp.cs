@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerPickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] TMP_Text notion;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -20,12 +21,20 @@ public class PlayerPickUp : MonoBehaviour
     {
         if(collision.CompareTag("ingredient"))
         {
-           Debug.Log("ingredient");
-           ingredientObj ingredientObjSc = collision.GetComponent<ingredientObj>();
+            Debug.Log("ingredient");
+            ingredientObj ingredientObjSc = collision.GetComponent<ingredientObj>();
 
-           Ingredient ingredientSc = ingredientObjSc.craftObj.GetComponent<Ingredient>();
-           ingredientSc.count += 1;
+            Ingredient ingredientSc = ingredientObjSc.craftObj.GetComponent<Ingredient>();
+            notion.text = ingredientSc.Name + " x 1";
+            ingredientSc.count += 1;
             Destroy(collision.gameObject);
+
+            Invoke("HideNotion", 2f);
         }
+    }
+
+    void HideNotion()
+    {
+        notion.text = "";
     }
 }

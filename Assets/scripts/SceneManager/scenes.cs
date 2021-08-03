@@ -38,7 +38,7 @@ public class scenes : MonoBehaviour
 
     public void OptionLRu()
     {
-        dilR.textLanguage = "ru";
+        dilR.textLanguage = "";
         optionPanel.SetActive(false);
     }
     public void OptionLEn()

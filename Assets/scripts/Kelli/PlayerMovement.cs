@@ -55,26 +55,13 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(horizontalMove.x * speed, rb.velocity.y);
 
 
-            if (Input.GetMouseButtonDown(0) && LeftClickWasClicked == false)
+            if (Input.GetMouseButtonDown(0))
             {
-                LeftClickWasClicked = true;
 
                 animator.SetTrigger("Attack");
-                //Attack();
+                Attack();
             }
             if (Input.GetMouseButtonUp(0))
-            {
-                animator.ResetTrigger("Attack");
-            }
-
-            if (Input.GetMouseButtonDown(1) && LeftClickWasClicked == true)//&& attackTimer<=0)
-            {
-                LeftClickWasClicked = false;
-
-                animator.SetTrigger("Attack");
-                //Attack();
-            }
-            if (Input.GetMouseButtonUp(1))
             {
                 animator.ResetTrigger("Attack");
             }
@@ -98,8 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 canMove = true;
             }
 
-            if (attack == true)
-                Attack();
+            
 
         }
     }
@@ -107,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
     void Attack()
     {     
         Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
-        attack = false;
     }
     void Jump()
     {

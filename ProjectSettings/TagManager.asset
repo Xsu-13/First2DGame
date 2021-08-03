@@ -10,6 +10,7 @@ TagManager:
   - scoreValue
   - wayPoints
   - ingredient
+  - npc
   layers:
   - Default
   - TransparentFX

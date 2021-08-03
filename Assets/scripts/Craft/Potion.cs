@@ -11,6 +11,7 @@ public class Potion : MonoBehaviour
     public string description;
     public int count;
     [SerializeField] TMP_Text countText;
+    public string Name;
     
     void Start()
     {
