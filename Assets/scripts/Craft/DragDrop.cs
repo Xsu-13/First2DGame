@@ -12,7 +12,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     Vector3 startPos;
     public static Transform startParent;
     public static GameObject itemBeingDrages;
-    [SerializeField] Transform[] slots;
+    [SerializeField] public Transform[] slots;
     Ingredient ingredientScript;
     private void Awake()
     {
