@@ -11,6 +11,8 @@ TagManager:
   - wayPoints
   - ingredient
   - npc
+  - inventory
+  - potion
   layers:
   - Default
   - TransparentFX

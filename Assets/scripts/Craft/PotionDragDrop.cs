@@ -4,26 +4,38 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    public  Vector3 startPos;
+    public static Vector3 startPos;
     public static Transform startParent;
+    public  Transform homeSlot;
+
     public static GameObject itemBeingDrages;
 
-    //Changes
-    GameObject image;
-    Sprite sprite;
     public Transform parentObj;
     public Vector3 startPosition;
+    Potion pot;
 
     public void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        pot = GetComponent<Potion>();
     }
+
+    void Start()
+    {
+
+        startPos = transform.position;
+        startPosition = startPos;
+        parentObj = transform.parent;
+        homeSlot = transform.parent;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
@@ -31,22 +43,12 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         startParent = transform.parent;
         itemBeingDrages = gameObject;
 
-        //Changes
-        /*
-        image = new GameObject();
-        image.transform.parent = canvas.transform;
-        rectTransform = image.AddComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(60, 60);
-        image.AddComponent<Image>();
-        image.GetComponent<Image>().sprite = sprite;
-        */
-
     }
 
     public void OnDrag(PointerEventData eventdata)
     {
-
-        rectTransform.anchoredPosition += eventdata.delta / canvas.scaleFactor;
+        
+            rectTransform.anchoredPosition += eventdata.delta / canvas.scaleFactor;
     }
 
 
@@ -60,26 +62,12 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     }
 
 
-    void Start()
-    {
-        //Changes
-        //sprite = GetComponent<Image>().sprite;
 
-        startPos = transform.position;
-        startPosition = startPos;
-        parentObj = transform.parent;
-    }
 
 
     void Update()
     {
-        
-    }
-
-    public void OnDrop(PointerEventData eventdata)
-    {
 
     }
-
 
 }
