@@ -11,13 +11,19 @@ public class pickUp : MonoBehaviour
     public GameObject itemButton;
     public TMP_Text countText;
     public int count = 0;
-    List<Ingredient.Type> types = new List<Ingredient.Type>();
+    public PotionType type;
+    Potion potionSc;
 
     
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("inventory").GetComponent<Inventory>();
-        
+        potionSc = craftObj.GetComponent<Potion>();
+    }
+
+    private void Update()
+    {
+        count = potionSc.count;
     }
 
 }

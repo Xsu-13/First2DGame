@@ -8,6 +8,9 @@ public class Inventory : MonoBehaviour
     public bool[] isFull;
     public GameObject[] slots;
     public GameObject[] count;
+    public int[] countInt;
+    public GameObject[] craftInventory;
+    public PotionType[] types;
     [SerializeField] Sprite selectSprite;
     [SerializeField] Sprite notSelectSprite;
     KeyDown key;
