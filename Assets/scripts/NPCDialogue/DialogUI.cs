@@ -9,14 +9,17 @@ public class DialogUI : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     DialogueRunner dialogueRunner;
     string speaker;
-    // Start is called before the first frame update
+    string language;
+    string en = "en";
+    
     void Start()
     {
         dialogueRunner = GetComponent<DialogueRunner>();
+        language = dialogueRunner.textLanguage;
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -29,6 +32,14 @@ public class DialogUI : MonoBehaviour
 
     public void SetSpeakerInfo(string[] info)
     {
-        nameText.text = info[0];
+        if(language == en)
+        {
+            nameText.text = info[1];
+        }
+        else
+        {
+            nameText.text = info[0];
+        }
+        
     }
 }

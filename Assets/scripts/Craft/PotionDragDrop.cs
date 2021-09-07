@@ -18,6 +18,7 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     public Transform parentObj;
     public Vector3 startPosition;
     Potion pot;
+    public static int startParentInd;
 
     public void Awake()
     {
@@ -42,7 +43,11 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         startPos = transform.position;
         startParent = transform.parent;
         itemBeingDrages = gameObject;
-
+        if(startParent.GetComponent<SlotType>() != null)
+        {
+            startParentInd = startParent.GetComponent<SlotType>().slotIndex;
+        }
+       
     }
 
     public void OnDrag(PointerEventData eventdata)

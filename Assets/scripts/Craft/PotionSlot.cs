@@ -41,43 +41,60 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
-       
-            if (childCount > 0)
-            {
-                another = transform.GetChild(0).transform;
-                anotherSlotTypeSc = PotionDragDrop.startParent.GetComponent<SlotType>();
-                //inventorySc.isFull[anotherSlotTypeSc.slotIndex] = false;
-                
-                //playerpu.RemoveInInventory();
 
-                if (anotherSlotTypeSc.slotTp == slotType.stock)
-                {
-                    
-                    another.transform.SetParent(another.GetComponent<PotionDragDrop>().homeSlot);
-                    another.transform.position = another.GetComponent<PotionDragDrop>().homeSlot.position;
-                    
-                
+        if (childCount > 0)
+        {
+            another = transform.GetChild(0).transform;
+            anotherSlotTypeSc = PotionDragDrop.startParent.GetComponent<SlotType>();
+            //inventorySc.isFull[anotherSlotTypeSc.slotIndex] = false;
+
+            //playerpu.RemoveInInventory();
+
+            if (anotherSlotTypeSc.slotTp == slotType.stock)
+            {
+
+                another.transform.SetParent(another.GetComponent<PotionDragDrop>().homeSlot);
+                another.transform.position = another.GetComponent<PotionDragDrop>().homeSlot.position;
+
+
                 //playerpu.RemoveInInventory(another.GetComponent<PotionSlot>().itemInInventory);
             }
-                else
-                {
-                    another.transform.SetParent(PotionDragDrop.startParent);
-                    another.transform.position = PotionDragDrop.startParent.position;
-                    playerpu.RemoveInInventory(anotherSlotTypeSc.slotIndex);
-                    GameObject ob = playerpu.InstantiateInInventory(another.GetComponent<Potion>().inventorySprite, anotherSlotTypeSc.slotIndex, another.GetComponent<Potion>().type, another.GetComponent<Potion>().count);
-                    inventorySc.count[anotherSlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[anotherSlotTypeSc.slotIndex].ToString();
-                }
-
+            else
+            {
+                another.transform.SetParent(PotionDragDrop.startParent);
+                another.transform.position = PotionDragDrop.startParent.position;
+                playerpu.RemoveInInventory(anotherSlotTypeSc.slotIndex);
+                GameObject ob = playerpu.InstantiateInInventory(another.GetComponent<Potion>().inventorySprite, anotherSlotTypeSc.slotIndex, another.GetComponent<Potion>().type, another.GetComponent<Potion>().count);
+                inventorySc.count[anotherSlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[anotherSlotTypeSc.slotIndex].ToString();
             }
 
             PotionDragDrop.itemBeingDrages.transform.SetParent(transform);
             potionItem = transform.GetChild(0).gameObject;
             PotionDragDrop.itemBeingDrages.transform.position = transform.position;
 
-        //inventorySc.isFull[mySlotTypeSc.slotIndex] = true;
+            //inventorySc.isFull[mySlotTypeSc.slotIndex] = true;
             playerpu.RemoveInInventory(mySlotTypeSc.slotIndex);
             itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count);
             inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[mySlotTypeSc.slotIndex].ToString();
+        }
+        else
+        {
+
+            PotionDragDrop.itemBeingDrages.transform.SetParent(transform);
+            potionItem = transform.GetChild(0).gameObject;
+            PotionDragDrop.itemBeingDrages.transform.position = transform.position;
+
+            //inventorySc.isFull[mySlotTypeSc.slotIndex] = true;
+           
+            if(PotionDragDrop.startParentInd >= 0)
+            {
+                playerpu.RemoveInInventory(PotionDragDrop.startParentInd);
+                Debug.Log(PotionDragDrop.startParentInd);
+                inventorySc.count[PotionDragDrop.startParentInd].GetComponent<TMP_Text>().text = "0";
+            }
+            itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count);
+            inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[mySlotTypeSc.slotIndex].ToString();
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

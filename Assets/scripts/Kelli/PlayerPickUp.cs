@@ -39,7 +39,8 @@ public class PlayerPickUp : MonoBehaviour
             Potion potionSc = pickUpSc.craftObj.GetComponent<Potion>();
             potionSc.count += 1;
             notion.text = potionSc.Name + " x 1";
-
+            
+            
             if (CheckType(pickUpSc.type))
             {
                 //Повтор код
@@ -48,6 +49,7 @@ public class PlayerPickUp : MonoBehaviour
                 pickUpSc.countText.text = (pickUpSc.count + 1).ToString();
                 
             }
+           
             else
             {
                 for (int i = 0; i < pickUpSc.inventory.slots.Length; i++)
@@ -87,11 +89,12 @@ public class PlayerPickUp : MonoBehaviour
 
     public void RemoveInInventory(int index)
     {
-        if (inventorySc.slots[index].transform.childCount > 1)
+        
+        if(inventorySc.slots[index].transform.childCount > 1)
         {
             inventorySc.types[index] = PotionType.type0;
             Destroy(inventorySc.slots[index].transform.GetChild(1).gameObject);
-        }
+        }        
     }
 
     bool CheckType(PotionType type)

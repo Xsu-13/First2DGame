@@ -3,20 +3,20 @@ tags:
 colorID: 0
 position: 691,-65
 ---
-<<SetSpeaker Шон>>
+<<SetSpeaker Шон Shon>>
  Так...я умер, да? #line:0df0993
-<<SetSpeaker Посол>>
+<<SetSpeaker Посол Ambassador>>
  Всё написано в брошюре. #line:062ecf0
-<<SetSpeaker Шон>>
+<<SetSpeaker Шон Shon>>
  И сейчас вы несёте меня в Чистилище. #line:0d36b7b
-<<SetSpeaker Посол>>
+<<SetSpeaker Посол Ambassador>>
  Всё написано в брошюре. #line:0dd035b
-<<SetSpeaker Шон>>
+<<SetSpeaker Шон Shon>>
  Потому что, вы, наверное, понимаете, что здесь многое неясно и... #line:0f4c19a
-<<SetSpeaker Посол>>
+<<SetSpeaker Посол Ambassador>>
  Всё написано в брошюре. #line:0f29f74
-<<SetSpeaker Шон>>
+<<SetSpeaker Шон Shon>>
  Я же говорю, что... #line:0f31594
-<<SetSpeaker Посол>>
+<<SetSpeaker Посол Ambassador>>
  Всё. Написано. В брошюре. #line:0b2352f
 ===
