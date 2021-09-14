@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: Shown_One_SkeletonData
+  m_Name: zombie_profile_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: d2609c87870961d45b926140fa9fd885, type: 2}
+  - {fileID: 11400000, guid: 05f0165c415e6dc4e81a46f3e4ae11bf, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 804a888e840ca5b429bf603731bfbe60, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: dddae8f79ad11bd4cafef001a7851a12, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: 257e797f4b1cbd0479a8c420fa328ec2, type: 2}
+  controller: {fileID: 9100000, guid: 45b18db346d66b6459fa0fd0580c3552, type: 2}

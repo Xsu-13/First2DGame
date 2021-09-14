@@ -18,17 +18,25 @@ public class PlayerMovement : MonoBehaviour
     public GameObject shere;
     public GameObject spawner;
     KelliController controller;
+    //Player player;
+    SelectPlayer selectPlayer;
+    public GameObject partner;
+    Vector3 correctPos;
+    //public GameObject selectedCharacter;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         controller = GetComponent<KelliController>();
+        //player = new Player(new Kelli());
+        selectPlayer = FindObjectOfType<SelectPlayer>();
     }
 
 
     void FixedUpdate()
     {
+        
         if (controller.craftIsActive)
         {
             return;
@@ -85,19 +93,40 @@ public class PlayerMovement : MonoBehaviour
                 canMove = true;
             }
 
+            if(Input.GetKeyDown(KeyCode.Tab))
+            {
+                Switch();
+            }
             
 
         }
     }
 
     void Attack()
-    {     
-        Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
+    {
+        selectPlayer.player.Attack();
+        //корректуируем
+        //Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
     }
     void Jump()
     {
         animator.SetTrigger("Jump");
         rb.velocity = Vector2.up * jumpForce;
         
+    }
+    void Switch()
+    {
+        int rotate = 1;
+        selectPlayer.player.Switch();
+        if (transform.localScale.x == -1)
+            rotate = -1;
+        if (selectPlayer.player.currentCharacter == Characters.KelliCharacter)            
+            correctPos = new  Vector3(-0.3f*rotate, -0.5f, 0);
+        else correctPos = new Vector3(0.3f*rotate, 0.5f, 0);
+
+        partner.transform.position = transform.position + correctPos;
+        partner.transform.localScale = transform.localScale;
+        partner.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
