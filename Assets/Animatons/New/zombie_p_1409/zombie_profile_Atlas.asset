@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3e95a05e4c9774397eeeb7bdee8ccb, type: 3}
-  m_Name: IDLE
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: zombie_profile_Atlas
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 5375c9dae74dd3a4e86de8699382575f, type: 2}
-  animationName: IDLE
+  atlasFile: {fileID: 4900000, guid: 7fa3d9bce89682647a0885a2a808f5d3, type: 3}
+  materials:
+  - {fileID: 2100000, guid: e2dc625ca66f47b4d952e8a38ef9fead, type: 2}

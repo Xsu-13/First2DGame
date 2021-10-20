@@ -24,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 correctPos;
     //public GameObject selectedCharacter;
 
+    [Header("Shon settings")]
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] LayerMask enemyLayers;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,13 +71,16 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
 
-                animator.SetTrigger("Attack");
+                //animator.SetTrigger("Attack");
+                animator.SetTrigger("attack1");
                 Attack();
             }
+            /*
             if (Input.GetMouseButtonUp(0))
             {
                 animator.ResetTrigger("Attack");
             }
+            */
 
             if (Input.GetKeyDown(KeyCode.Space) && gcheck.isGrounded == true)
             {
@@ -84,12 +92,14 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.S) && gcheck.isGrounded == true)
             {
                 animator.SetTrigger("Sqade");
+                //sqade = true;
                 canMove = false;
             }
 
-            if (Input.GetKeyUp(KeyCode.S))
+            if (!Input.GetKeyUp(KeyCode.S) && sqade == true)
             {
                 animator.ResetTrigger("Sqade");
+                //sqade = false;
                 canMove = true;
             }
 
@@ -106,7 +116,17 @@ public class PlayerMovement : MonoBehaviour
     {
         selectPlayer.player.Attack();
         //корректуируем
-        //Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
+        if(selectPlayer.player.currentCharacter == Characters.KelliCharacter)
+            Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
+        else
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            foreach(Collider2D enemy in hitEnemies)
+            {
+                EnemyHealth enemyH = enemy.GetComponent<EnemyHealth>();
+                enemyH.TakeDamage(20);
+            }
+        }
     }
     void Jump()
     {
@@ -128,5 +148,13 @@ public class PlayerMovement : MonoBehaviour
         partner.transform.localScale = transform.localScale;
         partner.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

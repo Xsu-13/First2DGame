@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    #region +++
-    [SerializeField] private int health = 100;
+    
+    
     [SerializeField] float agroRange = 30f;
     [SerializeField] float speed = 1;
     [SerializeField] float groundRayDist = 2f;
@@ -14,8 +14,6 @@ public class Enemy : MonoBehaviour
     GameObject player;
     Rigidbody2D rb;
     bool isFacingLeft;
-    public GameObject deathEffect;
-    public GameObject potion;
     public GameObject sphere;
     public GameObject spawner;
     public GameObject castPoint;
@@ -31,23 +29,9 @@ public class Enemy : MonoBehaviour
     float patrolSpeed;
     float attackTimer = 0;
     public Vector3 right;
-    #endregion
+   
 
-    #region DamageAndDie
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        if (health <= 0)
-            Die();
-    }
-
-    void Die()
-    {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Instantiate(potion, transform.position, transform.rotation);
-        Destroy(gameObject);
-    }
-    #endregion
+   
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

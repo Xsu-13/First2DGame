@@ -1,0 +1,181 @@
+
+zombie_profile.png
+size: 533,275
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back_hand_top
+  rotate: false
+  xy: 261, 5
+  size: 50, 132
+  orig: 50, 141
+  offset: 0, 9
+  index: -1
+back_head
+  rotate: true
+  xy: 215, 11
+  size: 29, 41
+  orig: 29, 41
+  offset: 0, 0
+  index: -1
+back_leg_bot
+  rotate: true
+  xy: 121, 8
+  size: 90, 42
+  orig: 90, 44
+  offset: 0, 2
+  index: -1
+back_leg_mid
+  rotate: false
+  xy: 284, 143
+  size: 37, 130
+  orig: 37, 136
+  offset: 0, 6
+  index: -1
+back_leg_top
+  rotate: false
+  xy: 94, 100
+  size: 43, 173
+  orig: 43, 176
+  offset: 0, 3
+  index: -1
+body_bot
+  rotate: false
+  xy: 439, 116
+  size: 52, 75
+  orig: 52, 75
+  offset: 0, 0
+  index: -1
+body_mid
+  rotate: false
+  xy: 199, 139
+  size: 83, 134
+  orig: 83, 134
+  offset: 0, 0
+  index: -1
+body_top
+  rotate: true
+  xy: 440, 201
+  size: 72, 52
+  orig: 72, 52
+  offset: 0, 0
+  index: -1
+front_ear
+  rotate: true
+  xy: 489, 80
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+front_hand_top1
+  rotate: false
+  xy: 323, 168
+  size: 53, 105
+  orig: 53, 105
+  offset: 0, 0
+  index: -1
+front_head
+  rotate: true
+  xy: 439, 69
+  size: 45, 48
+  orig: 45, 48
+  offset: 0, 0
+  index: -1
+front_leg_bot
+  rotate: true
+  xy: 165, 4
+  size: 98, 48
+  orig: 98, 48
+  offset: 0, 0
+  index: -1
+front_leg_mid
+  rotate: false
+  xy: 313, 16
+  size: 41, 125
+  orig: 41, 125
+  offset: 0, 0
+  index: -1
+front_leg_top
+  rotate: false
+  xy: 139, 104
+  size: 58, 169
+  orig: 58, 172
+  offset: 0, 3
+  index: -1
+hair
+  rotate: true
+  xy: 378, 193
+  size: 80, 60
+  orig: 138, 376
+  offset: 0, 316
+  index: -1
+hand_back_finger1
+  rotate: true
+  xy: 505, 6
+  size: 72, 26
+  orig: 72, 26
+  offset: 0, 0
+  index: -1
+hand_back_finger2
+  rotate: false
+  xy: 199, 104
+  size: 60, 33
+  orig: 60, 33
+  offset: 0, 0
+  index: -1
+hand_back_finger3
+  rotate: true
+  xy: 493, 128
+  size: 71, 30
+  orig: 71, 30
+  offset: 0, 0
+  index: -1
+hand_back_mid
+  rotate: false
+  xy: 2, 3
+  size: 117, 68
+  orig: 117, 68
+  offset: 0, 0
+  index: -1
+hand_front_mid
+  rotate: true
+  xy: 356, 69
+  size: 97, 81
+  orig: 97, 81
+  offset: 0, 0
+  index: -1
+hand_front_top
+  rotate: true
+  xy: 356, 2
+  size: 65, 60
+  orig: 65, 60
+  offset: 0, 0
+  index: -1
+jaw
+  rotate: true
+  xy: 461, 14
+  size: 53, 42
+  orig: 53, 42
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 418, 5
+  size: 62, 41
+  orig: 62, 42
+  offset: 0, 1
+  index: -1
+tail
+  rotate: false
+  xy: 2, 73
+  size: 90, 200
+  orig: 94, 202
+  offset: 0, 2
+  index: -1
+tongue
+  rotate: true
+  xy: 215, 42
+  size: 60, 44
+  orig: 60, 44
+  offset: 0, 0
+  index: -1

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class ButtonCraft : MonoBehaviour
 {
@@ -17,9 +18,20 @@ public class ButtonCraft : MonoBehaviour
     [SerializeField] bool isEmpty;
     [SerializeField] Sprite emptySprite;
     int localIndex;
+
+    [SerializeField] GameObject craftInventory;
+    Inventory inventory;
+
     void Start()
     {
         isEmpty = true;
+
+        if (craftInventory != null)
+        {
+            inventory = craftInventory.GetComponent<Inventory>();
+        }
+        else
+            Debug.Log("Inventory System does not find");
     }
 
 
@@ -48,7 +60,7 @@ public class ButtonCraft : MonoBehaviour
                 score = slot.GetComponent<Ingredient>().score;
 
                 Sum += score;
-
+               
             }
             if (isEmpty == false)
             {
@@ -96,7 +108,6 @@ public class ButtonCraft : MonoBehaviour
 
 
                 }
-
                 Sum = 0;
 
                 foreach (Transform slotTransform in slots)
@@ -119,10 +130,24 @@ public class ButtonCraft : MonoBehaviour
         Invoke("Hide", 2f);
     }
 
-    void  Hide()
+    void Hide()
     {
+        Potion potion = sprites[this.localIndex].GetComponent<Potion>();
         createdPotion.GetComponent<Image>().sprite = emptySprite;
-        sprites[this.localIndex].GetComponent<Potion>().count += 1;
+        potion.count += 1;
+
+        // счет €чейки
+        int countType = 0;
+        foreach(PotionType type in inventory.types)
+        {
+            
+            if(potion.type == type)
+            {
+                inventory.countInt[countType] += 1;
+                inventory.count[countType].GetComponent<TMP_Text>().text = inventory.countInt[countType].ToString();
+            }
+            countType += 1;
+        }
     }
 }
 

@@ -1,0 +1,104 @@
+
+flying_head.png
+size: 235,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eye
+  rotate: false
+  xy: 228, 201
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+eye_shine
+  rotate: true
+  xy: 107, 22
+  size: 58, 56
+  orig: 58, 56
+  offset: 0, 0
+  index: -1
+goo_bot
+  rotate: false
+  xy: 165, 13
+  size: 31, 31
+  orig: 45, 50
+  offset: 10, 0
+  index: -1
+goo_mid
+  rotate: true
+  xy: 107, 2
+  size: 18, 30
+  orig: 40, 54
+  offset: 18, 24
+  index: -1
+goo_top
+  rotate: false
+  xy: 129, 83
+  size: 46, 38
+  orig: 55, 55
+  offset: 9, 17
+  index: -1
+hair_bot
+  rotate: false
+  xy: 130, 208
+  size: 103, 54
+  orig: 103, 54
+  offset: 0, 0
+  index: -1
+hair_front
+  rotate: false
+  xy: 2, 193
+  size: 126, 69
+  orig: 126, 69
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 59, 7
+  size: 73, 46
+  orig: 73, 46
+  offset: 0, 0
+  index: -1
+head_front
+  rotate: true
+  xy: 139, 2
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+jaws_back
+  rotate: true
+  xy: 165, 46
+  size: 31, 37
+  orig: 31, 37
+  offset: 0, 0
+  index: -1
+jaws_front
+  rotate: false
+  xy: 177, 79
+  size: 54, 42
+  orig: 54, 42
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: true
+  xy: 2, 6
+  size: 74, 55
+  orig: 74, 55
+  offset: 0, 0
+  index: -1
+wing_left
+  rotate: false
+  xy: 2, 82
+  size: 125, 109
+  orig: 125, 109
+  offset: 0, 0
+  index: -1
+wing_right
+  rotate: false
+  xy: 130, 123
+  size: 96, 83
+  orig: 96, 83
+  offset: 0, 0
+  index: -1

@@ -41,7 +41,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
-
+        transform.SetAsLastSibling();
         if (childCount > 0)
         {
             another = transform.GetChild(0).transform;
@@ -103,7 +103,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
         {
             potionItem = transform.GetChild(0).gameObject;
             potionItem.transform.SetParent(potionItem.GetComponent<PotionDragDrop>().parentObj);
-            potionItem.transform.position = potionItem.GetComponent<PotionDragDrop>().startPosition;
+            potionItem.transform.position = potionItem.GetComponent<PotionDragDrop>().parentObj.transform.position;
             inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = "0";
             //inventorySc.isFull[mySlotTypeSc.slotIndex] = false;
             //itemInInventory

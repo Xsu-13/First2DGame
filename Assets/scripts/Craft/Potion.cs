@@ -7,9 +7,11 @@ using UnityEngine.UI;
 
 public class Potion : MonoBehaviour
 {
+    
     public int potionScore;
     public string description;
     public int count;
+    
     [SerializeField] TMP_Text countText;
     public string Name;
     public GameObject inventorySprite;

@@ -47,7 +47,9 @@ public class PlayerPickUp : MonoBehaviour
                 //проверка на наличие уже подобного зелья в инвентаре
                 pickUpSc.countText = pickUpSc.inventory.count[indexForCount].GetComponent<TMP_Text>();
                 pickUpSc.countText.text = (pickUpSc.count + 1).ToString();
-                
+                pickUpSc.inventory.countInt[indexForCount] += 1;
+
+
             }
            
             else
@@ -64,6 +66,9 @@ public class PlayerPickUp : MonoBehaviour
                         pickUpSc.craftObj.transform.SetParent(inventorySc.craftInventory[i].transform);
                         pickUpSc.craftObj.transform.position = inventorySc.craftInventory[i].transform.position;
                         inventorySc.types[i] = pickUpSc.type;
+                        //new
+                        inventorySc.countInt[i] += 1;
+
                         break;
                     }
                 }

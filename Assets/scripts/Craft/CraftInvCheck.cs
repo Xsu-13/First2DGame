@@ -34,5 +34,7 @@ public class CraftInvCheck : MonoBehaviour
                 inventorySc.isFull[index] = false;
             }
         }
+
+
     }
 }
