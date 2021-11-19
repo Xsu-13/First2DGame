@@ -16,8 +16,9 @@ public class PlayerHealth : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
-        currentHelth = maxHelth;
-        healthBar.SetMaxHealth(maxHelth);
+
+        //currentHelth = maxHelth;
+        //healthBar.SetMaxHealth(maxHelth);
     }
 
 
@@ -36,6 +37,17 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHelth -= damage;
+        healthBar.SetHealth(currentHelth);
+    }
+
+    public void SetHealth(int health)
+    {
+        currentHelth = health;
+        healthBar.SetHealth(currentHelth);
+    }
+    public void AddHealth(int health)
+    {
+        currentHelth += health;
         healthBar.SetHealth(currentHelth);
     }
 }

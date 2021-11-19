@@ -37,7 +37,7 @@ public class PlayerPickUp : MonoBehaviour
         {
             pickUp pickUpSc = collision.GetComponent<pickUp>();
             Potion potionSc = pickUpSc.craftObj.GetComponent<Potion>();
-            potionSc.count += 1;
+            potionSc.count.Value += 1;
             notion.text = potionSc.Name + " x 1";
             
             

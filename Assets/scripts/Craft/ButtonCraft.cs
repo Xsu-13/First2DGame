@@ -134,7 +134,7 @@ public class ButtonCraft : MonoBehaviour
     {
         Potion potion = sprites[this.localIndex].GetComponent<Potion>();
         createdPotion.GetComponent<Image>().sprite = emptySprite;
-        potion.count += 1;
+        potion.count.Value += 1;
 
         // счет €чейки
         int countType = 0;

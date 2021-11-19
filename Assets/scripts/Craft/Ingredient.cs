@@ -12,12 +12,26 @@ public class Ingredient : MonoBehaviour
     public string Name;
     public bool inCreateSlot = false;
     // должен оставаться public
-    public Type type;
+    public TypeIng type;
+
+    [SerializeField] ScObjIngredient scIng;
 
     private void Start()
     {
         countText.text = count.ToString();
         startParent = transform.parent;
+
+        
+        if (scIng == null)
+            return;
+        else
+        {
+            score = scIng.score;
+            count = scIng.count;
+            type = scIng.type;
+            Name = scIng.Name;
+        }
+        
     }
 
     private void Update()
@@ -25,9 +39,45 @@ public class Ingredient : MonoBehaviour
         countText.text = count.ToString();
     }
 
-    public enum Type
+    private void OnEnable()
     {
-        flyAway,
-        invisiblePotion
+        if (scIng == null)
+        {
+            return;
+        }
+        else
+        {
+            count = scIng.count;
+        }
+        
     }
+
+    private void OnDisable()
+    {
+        if (scIng == null)
+            return;
+        else
+            scIng.count = count;
+    }
+
+}
+
+public enum TypeIng
+{
+    flyAway,
+    invisiblePotion,
+    tropinchik,
+    sinesvet,
+    mehasvet,
+    grisovic,
+    ognelist,
+    pepelisa,
+    oscolok,
+    plod,
+    vseyadka,
+    yantarTears,
+    zubPremudrosti,
+    mohnatoeSerdses,
+    dushevosk,
+    poganka
 }

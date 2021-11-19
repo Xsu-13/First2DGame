@@ -4,30 +4,65 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-
 public class Potion : MonoBehaviour
 {
     
     public int potionScore;
     public string description;
-    public int count;
+    int countVal;
+    public ObservableVariable<int> count;
+    private ObserverbleLogger logger;
     
     [SerializeField] TMP_Text countText;
     public string Name;
     public GameObject inventorySprite;
     public PotionType type;
 
+    public ScObjPotion scPot;
+
+
+    private void Awake()
+    {
+        count = new ObservableVariable<int>(countVal);
+        logger = new ObserverbleLogger(count, countText);
+    }
+
     void Start()
     {
-        countText.text = count.ToString();
+        
+
+        if (scPot == null)
+            return;
+        else
+        {
+            potionScore = scPot.potionScore;
+            description = scPot.description;
+            count.Value = scPot.count;
+            type = scPot.type;
+            Name = scPot.Name;
+        }
+        
     }
 
-    
-    void Update()
+
+    private void OnEnable()
     {
-        countText.text = count.ToString();
+        if (scPot == null)
+            return;
+        else
+        {
+           count.Value = scPot.count;
+        }
     }
-
+    private void OnDisable()
+    {
+        if (scPot == null)
+            return;
+        else
+        {
+           scPot.count = count.Value;
+        }
+    }
     
 }
 
@@ -44,6 +79,5 @@ public enum PotionType
     type8,
     type9,
     type10,
-    type11,
-    type12
+    type11
 }

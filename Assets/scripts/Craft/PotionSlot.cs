@@ -64,7 +64,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
                 another.transform.SetParent(PotionDragDrop.startParent);
                 another.transform.position = PotionDragDrop.startParent.position;
                 playerpu.RemoveInInventory(anotherSlotTypeSc.slotIndex);
-                GameObject ob = playerpu.InstantiateInInventory(another.GetComponent<Potion>().inventorySprite, anotherSlotTypeSc.slotIndex, another.GetComponent<Potion>().type, another.GetComponent<Potion>().count);
+                GameObject ob = playerpu.InstantiateInInventory(another.GetComponent<Potion>().inventorySprite, anotherSlotTypeSc.slotIndex, another.GetComponent<Potion>().type, another.GetComponent<Potion>().count.Value);
                 inventorySc.count[anotherSlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[anotherSlotTypeSc.slotIndex].ToString();
             }
 
@@ -74,7 +74,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
 
             //inventorySc.isFull[mySlotTypeSc.slotIndex] = true;
             playerpu.RemoveInInventory(mySlotTypeSc.slotIndex);
-            itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count);
+            itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count.Value);
             inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[mySlotTypeSc.slotIndex].ToString();
         }
         else
@@ -92,7 +92,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
                 Debug.Log(PotionDragDrop.startParentInd);
                 inventorySc.count[PotionDragDrop.startParentInd].GetComponent<TMP_Text>().text = "0";
             }
-            itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count);
+            itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count.Value);
             inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = inventorySc.countInt[mySlotTypeSc.slotIndex].ToString();
         }
     }
@@ -114,5 +114,16 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
     public void Update()
     {
         childCount = transform.childCount;
+    }
+
+    public void Return()
+    {
+        potionItem = transform.GetChild(0).gameObject;
+        potionItem.transform.SetParent(potionItem.GetComponent<PotionDragDrop>().parentObj);
+        potionItem.transform.position = potionItem.GetComponent<PotionDragDrop>().parentObj.transform.position;
+        inventorySc.count[mySlotTypeSc.slotIndex].GetComponent<TMP_Text>().text = "0";
+        //inventorySc.isFull[mySlotTypeSc.slotIndex] = false;
+        //itemInInventory
+        playerpu.RemoveInInventory(mySlotTypeSc.slotIndex);
     }
 }

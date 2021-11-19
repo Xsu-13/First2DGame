@@ -1,0 +1,20 @@
+{
+    "potionCount": [
+        3,
+        10
+    ],
+    "ingCount": [
+        9
+    ],
+    "potInSlot": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "KelliHealth": 260,
+    "ShonHealth": 170,
+    "KelliMana": 60,
+    "ShonMana": 100
+}

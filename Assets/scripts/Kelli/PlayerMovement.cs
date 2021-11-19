@@ -29,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
 
+
+
+    //изменения
+    [SerializeField] [Range(0f, 4f)] float runSpeed;
+    bool run = false;
+    public float timer;
+    [SerializeField] float timerLimit;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<KelliController>();
         //player = new Player(new Kelli());
         selectPlayer = FindObjectOfType<SelectPlayer>();
+
+        
     }
 
 
@@ -96,19 +106,48 @@ public class PlayerMovement : MonoBehaviour
                 canMove = false;
             }
 
-            if (!Input.GetKeyUp(KeyCode.S) && sqade == true)
+            if (Input.GetKeyUp(KeyCode.S) && sqade == true)
             {
                 animator.ResetTrigger("Sqade");
                 //sqade = false;
                 canMove = true;
             }
 
+            
             if(Input.GetKeyDown(KeyCode.Tab))
             {
                 Switch();
             }
-            
 
+            //Рывок
+            if (Input.GetKeyDown(KeyCode.R) && selectPlayer.player.currentCharacter == Characters.KelliCharacter)
+            {
+                run = true;
+                timer = 0;
+            }
+
+            if (run == true)
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(100f, 0, 0) + transform.position, runSpeed * Time.deltaTime);
+                timer += Time.deltaTime;
+                if (timer > timerLimit)
+                {
+                    run = false;
+                    timer = 0;
+                }
+            }
+
+            //Для проверки
+            /*
+            if(Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                GetComponent<PlayerHealth>().TakeDamage(30);
+            }
+            if(Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                GetComponent<PlayerMana>().TakeDamage(20);
+            }
+            */
         }
     }
 
@@ -156,5 +195,13 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void PotionActivate(PotionType type)
+    {
+        if(type == PotionType.type0)
+        {
+            GetComponent<PlayerHealth>().AddHealth(20);
+        }
     }
 }

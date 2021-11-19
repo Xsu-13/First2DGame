@@ -10,8 +10,8 @@ public class PlayerMana : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMana = maxMana;
-        manaBar.SetMaxMana(maxMana);
+        //currentMana = maxMana;
+        //manaBar.SetMaxMana(maxMana);
     }
 
     // Update is called once per frame
@@ -19,9 +19,15 @@ public class PlayerMana : MonoBehaviour
     {
         
     }
-    void TakeDamage(int cost)
+    public void TakeDamage(int cost)
     {
         currentMana -= cost;
+        manaBar.SetMana(currentMana);
+    }
+
+    public void SetMana(int mana)
+    {
+        currentMana = mana;
         manaBar.SetMana(currentMana);
     }
 }

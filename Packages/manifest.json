@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "com.esotericsoftware.spine.urp-shaders": "file:C:/Users/Ксю/Downloads/com.esotericsoftware.spine.urp-shaders-4.0-Unity2019.3-2021-10-29 (1)/com.esotericsoftware.spine.urp-shaders-4.0-2019.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.3.9",
     "com.unity.ide.rider": "3.0.5",
     "com.unity.ide.visualstudio": "2.0.7",
     "com.unity.ide.vscode": "1.2.3",
+    "com.unity.render-pipelines.universal": "11.0.0",
     "com.unity.test-framework": "1.1.22",
     "com.unity.textmeshpro": "3.0.4",
     "com.unity.timeline": "1.5.2",
