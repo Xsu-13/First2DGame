@@ -28,14 +28,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
-
+    [SerializeField] AnimationCurve forceAnim;
 
 
     //изменения
     [SerializeField] [Range(0f, 4f)] float runSpeed;
     bool run = false;
-    public float timer;
     [SerializeField] float timerLimit;
+
+
+    float time;
 
     void Start()
     {
@@ -49,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         
         if (controller.craftIsActive)
@@ -118,22 +120,27 @@ public class PlayerMovement : MonoBehaviour
             {
                 Switch();
             }
-
+            float force;
             //Рывок
             if (Input.GetKeyDown(KeyCode.R) && selectPlayer.player.currentCharacter == Characters.KelliCharacter)
             {
                 run = true;
-                timer = 0;
+                force = forceAnim.Evaluate(0);
             }
 
             if (run == true)
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(100f, 0, 0) + transform.position, runSpeed * Time.deltaTime);
-                timer += Time.deltaTime;
-                if (timer > timerLimit)
+               
+                time += Time.deltaTime;
+                force = forceAnim.Evaluate(time);
+                if (transform.localScale.x < 0)
+                    force *= -1f;
+                transform.position = Vector3.Lerp(transform.position, new Vector3(force, 0, 0) + transform.position, runSpeed * Time.deltaTime);
+
+                if (forceAnim.Evaluate(time) <= 0)
                 {
                     run = false;
-                    timer = 0;
+                    time = 0;
                 }
             }
 
