@@ -15,9 +15,8 @@ public class sphere : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        spawner = GameObject.FindGameObjectWithTag("spawner");
         player = GameObject.FindGameObjectWithTag("Player");
+        spawner = player.GetComponent<PlayerMovement>().spawner;
         anim = GetComponent<Animator>();
 
         if (player.transform.localScale.x > 0)
@@ -53,8 +52,9 @@ public class sphere : MonoBehaviour
         EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage(damage);            
         }
+        Debug.Log("Trigger");
         Destroy(gameObject);
     }
 

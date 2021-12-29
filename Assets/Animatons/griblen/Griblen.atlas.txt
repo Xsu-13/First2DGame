@@ -1,0 +1,461 @@
+
+Griblen.png
+size: 1123,1028
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blue/body
+  rotate: false
+  xy: 2, 56
+  size: 268, 139
+  orig: 268, 139
+  offset: 0, 0
+  index: -1
+blue/ear
+  rotate: true
+  xy: 990, 10
+  size: 40, 45
+  orig: 40, 45
+  offset: 0, 0
+  index: -1
+blue/eye
+  rotate: true
+  xy: 272, 300
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+green/eye
+  rotate: true
+  xy: 272, 300
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+blue/fb_leg_bot
+  rotate: false
+  xy: 1034, 736
+  size: 87, 157
+  orig: 87, 157
+  offset: 0, 0
+  index: -1
+blue/fb_leg_top
+  rotate: true
+  xy: 568, 269
+  size: 109, 157
+  orig: 109, 157
+  offset: 0, 0
+  index: -1
+blue/ff_leg_bot
+  rotate: true
+  xy: 272, 208
+  size: 66, 288
+  orig: 66, 288
+  offset: 0, 0
+  index: -1
+blue/hair_body_bot
+  rotate: true
+  xy: 568, 380
+  size: 176, 130
+  orig: 176, 130
+  offset: 0, 0
+  index: -1
+blue/hair_head
+  rotate: false
+  xy: 2, 740
+  size: 312, 142
+  orig: 312, 147
+  offset: 0, 0
+  index: -1
+blue/hair_neck
+  rotate: true
+  xy: 979, 457
+  size: 118, 141
+  orig: 118, 141
+  offset: 0, 0
+  index: -1
+blue/head
+  rotate: false
+  xy: 449, 13
+  size: 99, 57
+  orig: 99, 57
+  offset: 0, 0
+  index: -1
+blue/leg_fb_mid
+  rotate: true
+  xy: 700, 380
+  size: 53, 101
+  orig: 53, 101
+  offset: 0, 0
+  index: -1
+blue/mushroom1
+  rotate: false
+  xy: 308, 2
+  size: 139, 68
+  orig: 139, 68
+  offset: 0, 0
+  index: -1
+blue/mushroom2
+  rotate: false
+  xy: 155, 2
+  size: 151, 52
+  orig: 151, 52
+  offset: 0, 0
+  index: -1
+blue/mushroom_top
+  rotate: false
+  xy: 2, 467
+  size: 294, 127
+  orig: 294, 127
+  offset: 0, 0
+  index: -1
+blue/neck
+  rotate: false
+  xy: 742, 737
+  size: 128, 160
+  orig: 128, 160
+  offset: 0, 0
+  index: -1
+blue/tail
+  rotate: false
+  xy: 990, 98
+  size: 71, 44
+  orig: 71, 44
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 197
+  size: 268, 139
+  orig: 268, 139
+  offset: 0, 0
+  index: -1
+ear
+  rotate: true
+  xy: 827, 91
+  size: 40, 45
+  orig: 40, 45
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 1063, 52
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+fb_leg_bot
+  rotate: true
+  xy: 562, 2
+  size: 87, 157
+  orig: 87, 157
+  offset: 0, 0
+  index: -1
+fb_leg_top
+  rotate: true
+  xy: 612, 611
+  size: 109, 157
+  orig: 109, 157
+  offset: 0, 0
+  index: -1
+ff_leg_bot
+  rotate: true
+  xy: 316, 558
+  size: 66, 288
+  orig: 66, 288
+  offset: 0, 0
+  index: -1
+green/body
+  rotate: false
+  xy: 298, 276
+  size: 268, 139
+  orig: 268, 139
+  offset: 0, 0
+  index: -1
+green/ear
+  rotate: false
+  xy: 1079, 6
+  size: 40, 44
+  orig: 40, 44
+  offset: 0, 0
+  index: -1
+green/fb_leg_bot
+  rotate: false
+  xy: 820, 419
+  size: 87, 157
+  orig: 87, 157
+  offset: 0, 0
+  index: -1
+green/fb_leg_top
+  rotate: false
+  xy: 1012, 577
+  size: 109, 157
+  orig: 109, 157
+  offset: 0, 0
+  index: -1
+green/ff_leg_bot
+  rotate: true
+  xy: 272, 72
+  size: 66, 288
+  orig: 66, 288
+  offset: 0, 0
+  index: -1
+green/hair_body_bot
+  rotate: true
+  xy: 695, 91
+  size: 176, 130
+  orig: 176, 130
+  offset: 0, 0
+  index: -1
+green/hair_head
+  rotate: false
+  xy: 2, 596
+  size: 312, 142
+  orig: 312, 147
+  offset: 0, 0
+  index: -1
+green/hair_neck
+  rotate: false
+  xy: 827, 133
+  size: 118, 141
+  orig: 118, 141
+  offset: 0, 0
+  index: -1
+green/head
+  rotate: false
+  xy: 1001, 199
+  size: 99, 57
+  orig: 99, 57
+  offset: 0, 0
+  index: -1
+green/leg_fb_mid
+  rotate: false
+  xy: 935, 30
+  size: 53, 101
+  orig: 53, 101
+  offset: 0, 0
+  index: -1
+green/mushroom1
+  rotate: false
+  xy: 977, 317
+  size: 139, 68
+  orig: 139, 68
+  offset: 0, 0
+  index: -1
+green/mushroom2
+  rotate: true
+  xy: 947, 156
+  size: 151, 52
+  orig: 151, 52
+  offset: 0, 0
+  index: -1
+green/mushroom_top
+  rotate: false
+  xy: 2, 338
+  size: 294, 127
+  orig: 294, 127
+  offset: 0, 0
+  index: -1
+green/neck
+  rotate: false
+  xy: 882, 603
+  size: 128, 160
+  orig: 128, 160
+  offset: 0, 0
+  index: -1
+green/tail
+  rotate: true
+  xy: 1063, 71
+  size: 71, 44
+  orig: 71, 44
+  offset: 0, 0
+  index: -1
+hair_body_bot
+  rotate: false
+  xy: 926, 895
+  size: 176, 131
+  orig: 176, 131
+  offset: 0, 0
+  index: -1
+hair_head
+  rotate: false
+  xy: 2, 884
+  size: 312, 142
+  orig: 312, 147
+  offset: 0, 0
+  index: -1
+hair_neck
+  rotate: false
+  xy: 700, 435
+  size: 118, 141
+  orig: 118, 141
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 727, 279
+  size: 99, 57
+  orig: 99, 57
+  offset: 0, 0
+  index: -1
+leg_fb_mid
+  rotate: true
+  xy: 1001, 144
+  size: 53, 101
+  orig: 53, 101
+  offset: 0, 0
+  index: -1
+mushroom1
+  rotate: true
+  xy: 909, 462
+  size: 139, 68
+  orig: 139, 68
+  offset: 0, 0
+  index: -1
+mushroom2
+  rotate: false
+  xy: 2, 2
+  size: 151, 52
+  orig: 151, 52
+  offset: 0, 0
+  index: -1
+mushroom_shine
+  rotate: false
+  xy: 630, 899
+  size: 294, 127
+  orig: 294, 127
+  offset: 0, 0
+  index: -1
+mushroom_top
+  rotate: false
+  xy: 316, 755
+  size: 294, 127
+  orig: 294, 127
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 612, 722
+  size: 128, 160
+  orig: 128, 160
+  offset: 0, 0
+  index: -1
+sepia/body
+  rotate: false
+  xy: 298, 417
+  size: 268, 139
+  orig: 268, 139
+  offset: 0, 0
+  index: -1
+sepia/ear
+  rotate: false
+  xy: 1037, 5
+  size: 40, 45
+  orig: 40, 45
+  offset: 0, 0
+  index: -1
+sepia/eye
+  rotate: true
+  xy: 1104, 990
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+sepia/fb_leg_bot
+  rotate: true
+  xy: 721, 2
+  size: 87, 157
+  orig: 87, 157
+  offset: 0, 0
+  index: -1
+sepia/fb_leg_top
+  rotate: false
+  xy: 771, 578
+  size: 109, 157
+  orig: 109, 157
+  offset: 0, 0
+  index: -1
+sepia/ff_leg_bot
+  rotate: true
+  xy: 272, 140
+  size: 66, 288
+  orig: 66, 288
+  offset: 0, 0
+  index: -1
+sepia/hair_body_bot
+  rotate: true
+  xy: 562, 91
+  size: 176, 131
+  orig: 176, 131
+  offset: 0, 0
+  index: -1
+sepia/hair_head
+  rotate: false
+  xy: 316, 884
+  size: 312, 142
+  orig: 312, 147
+  offset: 0, 0
+  index: -1
+sepia/hair_neck
+  rotate: false
+  xy: 803, 276
+  size: 118, 141
+  orig: 118, 141
+  offset: 0, 0
+  index: -1
+sepia/head
+  rotate: false
+  xy: 1001, 258
+  size: 99, 57
+  orig: 99, 57
+  offset: 0, 0
+  index: -1
+sepia/leg_fb_mid
+  rotate: false
+  xy: 880, 30
+  size: 53, 101
+  orig: 53, 101
+  offset: 0, 0
+  index: -1
+sepia/mushroom1
+  rotate: false
+  xy: 977, 387
+  size: 139, 68
+  orig: 139, 68
+  offset: 0, 0
+  index: -1
+sepia/mushroom2
+  rotate: true
+  xy: 923, 309
+  size: 151, 52
+  orig: 151, 52
+  offset: 0, 0
+  index: -1
+sepia/mushroom_top
+  rotate: false
+  xy: 316, 626
+  size: 294, 127
+  orig: 294, 127
+  offset: 0, 0
+  index: -1
+sepia/neck
+  rotate: true
+  xy: 872, 765
+  size: 128, 160
+  orig: 128, 160
+  offset: 0, 0
+  index: -1
+sepia/tail
+  rotate: false
+  xy: 990, 52
+  size: 71, 44
+  orig: 71, 44
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 606, 565
+  size: 71, 44
+  orig: 71, 44
+  offset: 0, 0
+  index: -1

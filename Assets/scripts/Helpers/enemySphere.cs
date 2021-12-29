@@ -15,8 +15,12 @@ public class enemySphere : MonoBehaviour
         spawner = GameObject.FindGameObjectWithTag("spawner");
         enemy = GameObject.FindGameObjectWithTag("enemy");
         if (enemy.transform.localScale.x > 0)
-            scale = 1;
-        else scale = -1;
+        {
+            scale = -1;
+            transform.localScale = new Vector3(-1f,1,0);
+        }
+        else scale = 1;
+        
     }
 
     // Update is called once per frame

@@ -22,10 +22,10 @@ TagManager:
   - UI
   - show
   - enemy
-  - 
-  - 
-  - 
-  - 
+  - player
+  - playerGhost
+  - level
+  - groundCheck
   - 
   - 
   - 

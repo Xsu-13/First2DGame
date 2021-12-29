@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: wolf_SkeletonData
+  m_Name: Griblen_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 46080f9032a926a4ca2cf7aca64b56bc, type: 2}
+  - {fileID: 11400000, guid: 5669ae6ddd5303140ab0d154b12bf4d2, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: a32f409ddc9e3664093f74176c3ebaac, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: bd97c20965053ee49aeed223cde48e65, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 1
     applyAdditiveMaterial: 1
     additiveMaterials:
-    - pageName: wolf.png
-      material: {fileID: 2100000, guid: 1f037f016a4263e4d8be127fd79c8aab, type: 2}
+    - pageName: Griblen.png
+      material: {fileID: 2100000, guid: 67900e44d74ae2f47b4d84dbcfe68b61, type: 2}
     multiplyMaterials: []
     screenMaterials: []
   skeletonDataModifiers: []
@@ -30,4 +30,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: a7bdd29caf1693440865361e097a3a51, type: 2}
+  controller: {fileID: 9100000, guid: e2db16d5168bcb24f91b02586e1c7305, type: 2}

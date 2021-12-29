@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Spine.Unity;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,12 +12,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject gameOver;
     PlayerMovement playerMovement;
     Animator animator;
+    [SerializeField] Material mat;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
-
         //currentHelth = maxHelth;
         //healthBar.SetMaxHealth(maxHelth);
     }
@@ -38,6 +39,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHelth -= damage;
         healthBar.SetHealth(currentHelth);
+        mat.SetFloat("_FillPhase", 0.4f);
+        Invoke("Return", 0.2f);
     }
 
     public void SetHealth(int health)
@@ -49,5 +52,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHelth += health;
         healthBar.SetHealth(currentHelth);
+    }
+
+    public void Return()
+    {
+        mat.SetFloat("_FillPhase", 0f);
     }
 }

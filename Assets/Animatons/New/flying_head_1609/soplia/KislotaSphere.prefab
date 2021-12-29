@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8249953896295826897}
   - component: {fileID: 8072431463795970923}
   - component: {fileID: 1015024562739521000}
+  - component: {fileID: -3514289679592974140}
   m_Layer: 0
   m_Name: KislotaSphere
   m_TagString: Untagged
@@ -83,7 +84,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 40
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8249953896295826897
 Animator:
@@ -155,4 +156,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d8612166abbf74d969c7bf867c5a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
+--- !u!58 &-3514289679592974140
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290198493531237351}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

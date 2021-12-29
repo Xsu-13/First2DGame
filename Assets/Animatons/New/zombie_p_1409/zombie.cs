@@ -1,115 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-public class Head : MonoBehaviour
+public class zombie : MonoBehaviour
 {
+    public bool finishedAttack;
+
+
     public List<GameObject> waypoints = new List<GameObject>();
     public Transform player1;
     public Transform player2;
-    public State currentState;
-    public GameObject sphere;
-    public GameObject spawner;
+    State currentState;
+    public Transform attackPoint;
     public string state;
-    //public Transform groungDetection;
-    //public GameObject castPoint;
-    Animator anime;
+    public Transform groungDetection;
+    [SerializeField] float attackRange;
+    [SerializeField] LayerMask playerLayer;
+    Animator anim;
 
-    bool pursue;
-
-
-    Rigidbody2D rb;
-    public Transform target;
-    public float speed;
-    public float nextWaypointDistance = 3f;
-
-    Path path;
-    int currentWaypointSeeker = 0;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
-    Seeker seeker;
+    //public NavMeshAgent agent;
 
     void Start()
     {
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
-        anime = GetComponent<Animator>();
-
+        //agent = GetComponent<NavMeshAgent>();
         currentState = new Idle(gameObject, player1, player2);
-
+        anim = GetComponent<Animator>();
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
-        
-        if(pursue)
-        {
-            PursuePlayer();
-        }
-        
-
         currentState = currentState.Process();
-
-    }
-    
-    public void PursuePlayer()
-    {
-        if (path == null)
-            return;
-        if (currentWaypointSeeker >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
-
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypointSeeker] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
-
-        rb.AddForce(force);
-
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypointSeeker]);
-
-        if (distance < nextWaypointDistance)
-        {
-            currentWaypointSeeker++;
-        }
+        state = currentState.name.ToString();
     }
 
-    void OnPathComplete(Path p)
-    {
-        if (!p.error)
-        {
-            path = p;
-            currentWaypointSeeker = 0;
-        }
-    }
-
-    void UpdatePath()
-    {
-        seeker.StartPath(rb.position, target.position, OnPathComplete);
-    }
-
-    public void Repeate()
-    {
-          InvokeRepeating("UpdatePath", 0, 0.5f);
-    }
 
     public void AttackPlayer()
     {
-        Transform player;
-        if (player1.gameObject.activeInHierarchy)
-            player = player1;
-        else
-            player = player2;
-
-        Quaternion rot = Quaternion.LookRotation( player.position - transform.position);
-        Instantiate(sphere, spawner.transform.position, spawner.transform.rotation);
+        finishedAttack = false;
+        anim.SetTrigger("Attack");
+        Collider2D[] players = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        foreach (Collider2D player in players)
+        {
+            PlayerHealth playerH = player.GetComponent<PlayerHealth>();
+            playerH.TakeDamage(20);
+        }
+        Debug.Log("Zombie attack");
     }
 
 
@@ -135,19 +71,13 @@ public class Head : MonoBehaviour
         protected Rigidbody2D rb;
         protected int currentWaypoint = 0;
         protected float timer;
-        //protected Transform groundDetection;
-        //protected GameObject castPoint;
+        protected Transform groundDetection;
+        protected GameObject castPoint;
         protected Transform player;
-
-
-        public Transform target;
-        public float speed;
-        public float nextWaypointDistance = 3f;
-
-        //int currentWaypoint = 0;
+        protected zombie zomb;
 
         float visDist = 20f;
-        float visAttack = 12f;
+        float visAttack = 2f;
 
         public State(GameObject _enemy, Transform _player1, Transform _player2)
         {
@@ -155,12 +85,13 @@ public class Head : MonoBehaviour
             player1 = _player1;
             player2 = _player2;
             stage = EVENT.ENTER;
-            Head head = enemy.GetComponent<Head>();
-            waypoints = head.waypoints;
+            zomb = enemy.GetComponent<zombie>();
+            groundDetection = zomb.groungDetection;
+            waypoints = zomb.waypoints;
             rb = enemy.GetComponent<Rigidbody2D>();
-            target = head.target;
-            //groundDetection = head.groungDetection;
-            //castPoint = head.castPoint;
+            //groundDetection = enemyfsm.groungDetection;
+            //castPoint = enemyfsm.castPoint;
+            //agent = enemyfsm.agent;
 
         }
 
@@ -191,38 +122,21 @@ public class Head : MonoBehaviour
         }
 
         public bool CanAttackPlayer(Transform player)
-        {            
+        {
+            
+            if (CanSeePlayer())
+            {
                 Vector3 direction = player.position - enemy.transform.position;
                 if (direction.magnitude < visAttack)
                 {
                     return true;
-
                 }
                 return false;
-        }
 
-        /*
-        public bool canSee()
-        {
-            bool val = false;
-
-           // RaycastHit2D hit = Physics2D.Raycast(castPoint.transform.position, Vector2.right * new Vector2(enemy.transform.localScale.x, 0), 18);
-           
-            if (hit.collider != null)
-            {
-                //Debug.DrawLine(castPoint.transform.position,hit.transform.position, Color.red);
-                if (hit.collider.gameObject.CompareTag("Player"))
-                {
-                    val = true;
-                    //Debug.Log("seeeee");
-                }
-                else val = false;
             }
-           
-            return val;
-           
+            return false;
         }
-        */
+
     }
 
     public class Idle : State
@@ -231,6 +145,8 @@ public class Head : MonoBehaviour
         public Idle(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.IDLE;
+            //agent.speed = 0f;
+
         }
 
         public override void Enter()
@@ -247,14 +163,14 @@ public class Head : MonoBehaviour
                 player = player2;
 
 
-            if (CanAttackPlayer(player))
-            {
-                nextState = new Attack(enemy, player1, player2);
-                stage = EVENT.EXIT;
-            }
-            else if (CanSeePlayer())
+            if (CanSeePlayer())
             {
                 nextState = new Pursue(enemy, player1, player2);
+                stage = EVENT.EXIT;
+            }
+            else if (CanAttackPlayer(player))
+            {
+                nextState = new Attack(enemy, player1, player2);
                 stage = EVENT.EXIT;
             }
 
@@ -281,32 +197,20 @@ public class Head : MonoBehaviour
 
     public class Pursue : State
     {
-        Head enemyHead;
-
         public Pursue(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.PURSUE;
         }
 
-        
         public override void Update()
         {
-
-           
-
             if (player1.gameObject.activeInHierarchy)
-            {
                 player = player1;
-                enemyHead.target = player1;
-            }
             else
-            {
                 player = player2;
-                enemyHead.target = player2;
-            }
 
-            //RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
-            /*
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
+
             if (groundInfo.collider == false)
             {
                 if (CanAttackPlayer(player))
@@ -320,7 +224,7 @@ public class Head : MonoBehaviour
                     stage = EVENT.EXIT;
                 }
             }
-            */
+
 
             if (CanAttackPlayer(player))
             {
@@ -334,43 +238,37 @@ public class Head : MonoBehaviour
             }
             else if (player.position.x > enemy.transform.position.x)
             {
+                rb.velocity = new Vector2(2f, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
             else
-            { 
+            {
+                rb.velocity = new Vector2(-2f, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
         }
 
         public override void Enter()
         {
-            enemyHead = enemy.GetComponent<Head>();
-            enemyHead.pursue = true;
-            enemyHead.Repeate();
             base.Enter();
-
         }
         public override void Exit()
         {
-            enemyHead.pursue = false;
             base.Exit();
         }
     }
 
     public class Patrol : State
     {
-        Head enemyHead;
 
         public Patrol(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.PATROL;
             //agent.speed = 2f;
-            enemyHead = enemy.GetComponent<Head>();
         }
 
         public override void Update()
         {
-            
             //скорректировать
             if (player1.gameObject.activeInHierarchy)
                 player = player1;
@@ -389,69 +287,52 @@ public class Head : MonoBehaviour
             }
             else
             {
-                if (Mathf.Abs(enemy.transform.position.x - waypoints[currentWaypoint].transform.position.x) <= 4f)
+                Move();
+
+                if (Mathf.Abs(enemy.transform.position.x - waypoints[currentWaypoint].transform.position.x) <= 1f)
                 {
-                    currentWaypoint += 1;                    
+                    currentWaypoint += 1;
                     if (currentWaypoint == waypoints.Count)
                         currentWaypoint = 0;
-                    if((enemyHead.waypoints[currentWaypoint].transform.position.x>enemy.transform.position.x))
-                        enemy.transform.localScale = new Vector2(-1, 1);
-                    else
-                        enemy.transform.localScale = new Vector2(1, 1);
-
-                    enemyHead.currentWaypoint = currentWaypoint;
-                    enemyHead.target = enemyHead.waypoints[currentWaypoint].transform;
-                    //Debug.Log(currentWaypoint);
+                    Move();
                 }
             }
         }
         public override void Enter()
         {
-            enemyHead.pursue = true;
-            enemyHead.Repeate();
             base.Enter();
         }
         public override void Exit()
         {
-            enemyHead.pursue = false;
             base.Exit();
         }
 
         public void Move()
         {
-           
-          
-            /*
             if (waypoints[currentWaypoint].transform.position.x < enemy.transform.position.x)
             {
                 rb.velocity = new Vector2(-2, 0);
-                enemy.transform.localScale = new Vector2(-1, 1);
+                enemy.transform.localScale = new Vector2(1, 1);
             }
             else
             {
                 rb.velocity = new Vector2(2, 0);
-                enemy.transform.localScale = new Vector2(1, 1);
+                enemy.transform.localScale = new Vector2(-1, 1);
             }
-            */
         }
     }
 
     public class Attack : State
     {
-        Head enemyHead;
 
         public Attack(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.ATTACK;
-            //agent.speed = 0;
-            enemyHead = enemy.GetComponent<Head>();
             timer = 0f;
-            
         }
 
         public override void Update()
         {
-            
             if (player1.gameObject.activeInHierarchy)
                 player = player1;
             else
@@ -460,11 +341,11 @@ public class Head : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             if (timer <= 0)
             {
-                enemyHead.anime.SetTrigger("Attack");
-                enemyHead.AttackPlayer();
+                enemy.GetComponent<zombie>().AttackPlayer();
                 timer = 1.5f;
             }
             else timer -= Time.deltaTime;
+
 
             if (player.position.x > enemy.transform.position.x)
             {
@@ -504,29 +385,14 @@ public class Head : MonoBehaviour
             */
             if (CanSeePlayer())
             {
-                if (!CanAttackPlayer(player))
+                if (!CanAttackPlayer(player) && zomb.finishedAttack)
                 {
                     nextState = new Pursue(enemy, player1, player2);
                     stage = EVENT.EXIT;
                 }
 
             }
-
-            /*
-            if ((player.transform.position - enemy.transform.position).magnitude < 18 && !CanSeePlayer())
-            {
-
-                int sc = 1;
-                if (player.transform.position.x - enemy.transform.position.x <= 0)
-                    sc = -1;
-
-                enemy.transform.localScale = new Vector2(sc, 1);
-
-
-                nextState = new Idle(enemy, player1, player2);
-                stage = EVENT.EXIT;
-            }
-            */
+            
             /*
             if (!canSee() && (player.transform.position - enemy.transform.position).magnitude <18)
             {
@@ -545,5 +411,5 @@ public class Head : MonoBehaviour
         {
             base.Exit();
         }
+        }
     }
-}

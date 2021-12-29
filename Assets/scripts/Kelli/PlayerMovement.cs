@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool fff;
+
     public Animator animator;
     public bool jump = false;
     public bool sqade = false;
@@ -29,15 +31,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
     [SerializeField] AnimationCurve forceAnim;
+    [SerializeField] public AnimationCurve deerForce;
 
 
     //изменения
-    [SerializeField] [Range(0f, 4f)] float runSpeed;
+    [SerializeField] [Range(0f, 10f)] float runSpeed;
     bool run = false;
     [SerializeField] float timerLimit;
 
-
+    float force;
     float time;
+    float time1;
+
+    public float deerforce;
+    public float forceee;
 
     void Start()
     {
@@ -50,10 +57,50 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        if (fff)
+        {
+            /*
+            time1 += Time.deltaTime;
+            deerforce = forceAnim.Evaluate(time1);
+            //rb.MovePosition(new Vector2(startPosit.x + time1*0.00001f, startPosit.y + deerforce));
 
+            //transform.position = Vector3.Lerp(transform.position, new Vector3(force, 0, 0) + transform.position, runSpeed * Time.deltaTime);
+
+            if (deerForce.Evaluate(time1) <= 0)
+            {
+                fff = false;
+                time1 = 0;
+            }
+            */
+            time1 += Time.deltaTime;
+            deerforce = forceAnim.Evaluate(time1);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(time1 * forceee, deerforce, 0) + transform.position, 5f * Time.deltaTime);
+            if (deerForce.Evaluate(time1) <= 0)
+            {
+                fff = false;
+                time1 = 0;
+            }
+        }
+        if (run == true)
+        {
+            time += Time.deltaTime;
+            force = forceAnim.Evaluate(time);
+            if (transform.localScale.x < 0)
+                force *= -1f;
+            transform.position = Vector3.Lerp(transform.position, new Vector3(force, 0, 0) + transform.position, runSpeed * Time.deltaTime);
+
+            if (forceAnim.Evaluate(time) <= 0)
+            {
+                gameObject.layer = 8;
+                run = false;
+                time = 0;
+            }
+        }
+    }
     void Update()
     {
-        
         if (controller.craftIsActive)
         {
             return;
@@ -120,29 +167,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 Switch();
             }
-            float force;
+            
             //Рывок
             if (Input.GetKeyDown(KeyCode.R) && selectPlayer.player.currentCharacter == Characters.KelliCharacter)
             {
+                gameObject.layer = 9;
                 run = true;
                 force = forceAnim.Evaluate(0);
             }
-
-            if (run == true)
-            {
-               
-                time += Time.deltaTime;
-                force = forceAnim.Evaluate(time);
-                if (transform.localScale.x < 0)
-                    force *= -1f;
-                transform.position = Vector3.Lerp(transform.position, new Vector3(force, 0, 0) + transform.position, runSpeed * Time.deltaTime);
-
-                if (forceAnim.Evaluate(time) <= 0)
-                {
-                    run = false;
-                    time = 0;
-                }
-            }
+            
+            
 
             //Для проверки
             /*
@@ -157,6 +191,7 @@ public class PlayerMovement : MonoBehaviour
             */
         }
     }
+
 
     void Attack()
     {

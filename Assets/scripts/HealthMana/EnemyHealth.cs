@@ -17,8 +17,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Instantiate(potion, transform.position, transform.rotation);
+        if ((deathEffect != null) && (potion != null))
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(potion, transform.position, transform.rotation);
+        }
         Destroy(gameObject);
     }
 }
