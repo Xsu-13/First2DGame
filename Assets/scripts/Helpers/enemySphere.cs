@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class enemySphere : MonoBehaviour
 {
+    [Header("Скорость")]
     public float speed;
     GameObject spawner;
     GameObject enemy;
     float scale;
-    int damage = 30;
+    [Header("Эту настройку можно настроить на самом врагу")]
+    public int damage = 30;
     // Start is called before the first frame update
     void Start()
     {

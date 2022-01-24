@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMana : MonoBehaviour
 {
-    private int maxMana = 100;
+    [Header("Custom settings")]
+    [Header("Максимальное количество маны")]
+    [SerializeField] int maxMana = 100;
+    [Header("-----Inside set-----")]
     public int currentMana;
     public ManaBar manaBar;
     // Start is called before the first frame update

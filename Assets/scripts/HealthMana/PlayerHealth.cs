@@ -6,7 +6,10 @@ using Spine.Unity;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int maxHelth = 500;
+    [Header("Custom settings")]
+    [Header("Максимальное количество жизней")]
+    [SerializeField] int maxHelth = 500;
+    [Header("-----Inside set-----")]
     public int currentHelth;
     public HealthBar healthBar;
     [SerializeField] GameObject gameOver;

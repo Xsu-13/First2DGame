@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd8f05fa33b65045bbdee6359a67d2e, type: 3}
   m_Name: pot2
   m_EditorClassIdentifier: 
-  potionScore: 0
-  description: 
-  count: 0
+  potionScore: 4
+  description: "\u041D\u043E\u0432\u043E\u0435 \u0437\u0435\u043B\u044C\u0435) "
+  count: 4
   type: 2
-  Name: 
+  Name: "\u0430\u043B\u044C\u043C\u0430\u043D\u0430\u0445"

@@ -4,25 +4,39 @@ using UnityEngine;
 
 public class zombie : MonoBehaviour
 {
-    public bool finishedAttack;
 
-
+    [Header("Custom settings")]
+    [Header("waypoits")]
     public List<GameObject> waypoints = new List<GameObject>();
-    public Transform player1;
-    public Transform player2;
-    State currentState;
-    public Transform attackPoint;
-    public string state;
-    public Transform groungDetection;
+    [Header("Радиус атаки")]
     [SerializeField] float attackRange;
+    [Header("Расстояние, на котором враг видит игрока")]
+    public float visDist = 20f;
+    [Header("Расстояние начала атаки")]
+    public float visAttack = 2f;
+    [Header("Скорость")]
+    public float speed = 2f;
+    [Header("Урон")]
+    [SerializeField] int damage = 10;
+
+    [Header("------Inside set------")]
+    Transform player1;
+    Transform player2;
+    public Transform groungDetection;
     [SerializeField] LayerMask playerLayer;
     Animator anim;
-
-    //public NavMeshAgent agent;
+    State currentState;
+    public Transform attackPoint;
+    // public string state;
+    public bool finishedAttack;
+    PlayerMovement[] players;
 
     void Start()
     {
-        //agent = GetComponent<NavMeshAgent>();
+        players = Resources.FindObjectsOfTypeAll<PlayerMovement>();
+        player1 = players[0].transform;
+        player2 = players[1].transform;
+
         currentState = new Idle(gameObject, player1, player2);
         anim = GetComponent<Animator>();
     }
@@ -30,8 +44,9 @@ public class zombie : MonoBehaviour
 
     void Update()
     {
+
         currentState = currentState.Process();
-        state = currentState.name.ToString();
+        //state = currentState.name.ToString();
     }
 
 
@@ -43,7 +58,7 @@ public class zombie : MonoBehaviour
         foreach (Collider2D player in players)
         {
             PlayerHealth playerH = player.GetComponent<PlayerHealth>();
-            playerH.TakeDamage(20);
+            playerH.TakeDamage(damage);
         }
         Debug.Log("Zombie attack");
     }
@@ -76,6 +91,7 @@ public class zombie : MonoBehaviour
         protected Transform player;
         protected zombie zomb;
 
+        protected float speed;
         float visDist = 20f;
         float visAttack = 2f;
 
@@ -89,9 +105,11 @@ public class zombie : MonoBehaviour
             groundDetection = zomb.groungDetection;
             waypoints = zomb.waypoints;
             rb = enemy.GetComponent<Rigidbody2D>();
+            visAttack = zomb.visAttack;
+            visDist = zomb.visDist;
+            speed = zomb.speed;
             //groundDetection = enemyfsm.groungDetection;
             //castPoint = enemyfsm.castPoint;
-            //agent = enemyfsm.agent;
 
         }
 
@@ -145,8 +163,6 @@ public class zombie : MonoBehaviour
         public Idle(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.IDLE;
-            //agent.speed = 0f;
-
         }
 
         public override void Enter()
@@ -238,12 +254,12 @@ public class zombie : MonoBehaviour
             }
             else if (player.position.x > enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(2f, 0);
+                rb.velocity = new Vector2(speed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(-2f, 0);
+                rb.velocity = new Vector2(-speed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
         }
@@ -264,12 +280,10 @@ public class zombie : MonoBehaviour
         public Patrol(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.PATROL;
-            //agent.speed = 2f;
         }
 
         public override void Update()
         {
-            //скорректировать
             if (player1.gameObject.activeInHierarchy)
                 player = player1;
             else
@@ -311,12 +325,12 @@ public class zombie : MonoBehaviour
         {
             if (waypoints[currentWaypoint].transform.position.x < enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(-2, 0);
+                rb.velocity = new Vector2(-speed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(2, 0);
+                rb.velocity = new Vector2(speed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
         }

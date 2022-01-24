@@ -5,39 +5,52 @@ using Pathfinding;
 
 public class Head : MonoBehaviour
 {
+    [Header("Custom settings")]
     public List<GameObject> waypoints = new List<GameObject>();
-    public Transform player1;
-    public Transform player2;
+    [Header("Скорость")]
+    public float speed;
+    [Header("Расстояние до смены цели(следующей позиции)")]
+    public float nextWaypointDistance = 3f;
+    [Header("Расстояние, на котором враг видит игрока")]
+    public float visDist = 20f;
+    [Header("Расстояние начала атаки")]
+    public float visAttack = 3f;
+    [Header("Урон")]
+    int damage = 30;
+    [Header("-----Inside set------")]
+    Transform player1;
+    Transform player2;
     public State currentState;
     public GameObject sphere;
     public GameObject spawner;
-    public string state;
+    //public string state;
     //public Transform groungDetection;
     //public GameObject castPoint;
     Animator anime;
-
     bool pursue;
-
-
     Rigidbody2D rb;
     public Transform target;
-    public float speed;
-    public float nextWaypointDistance = 3f;
-
     Path path;
     int currentWaypointSeeker = 0;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
     Seeker seeker;
+    enemySphere enemySphere;
+    PlayerMovement[] players;
 
     void Start()
     {
+        players = Resources.FindObjectsOfTypeAll<PlayerMovement>();
+        player1 = players[0].transform;
+        player2 = players[1].transform;
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
 
         currentState = new Idle(gameObject, player1, player2);
-
+        enemySphere= sphere.GetComponent<enemySphere>();
+        enemySphere.damage = damage;
     }
 
 
@@ -159,6 +172,8 @@ public class Head : MonoBehaviour
             waypoints = head.waypoints;
             rb = enemy.GetComponent<Rigidbody2D>();
             target = head.target;
+            visDist = head.visDist;
+            visAttack = head.visAttack;
             //groundDetection = head.groungDetection;
             //castPoint = head.castPoint;
 

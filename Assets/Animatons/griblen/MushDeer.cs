@@ -4,25 +4,43 @@ using UnityEngine;
 
 public class MushDeer : MonoBehaviour
 {
-    public bool finishedAttack;
-
-
+    [Header("Custom settings")]
     public List<GameObject> waypoints = new List<GameObject>();
-    public Transform player1;
-    public Transform player2;
-    State currentState;
+    [Header("Радиус атаки")]
+    [SerializeField] float attackRange;
+    [Header("Расстояние, на котором враг видит игрока")]
+    public float visDist = 20f;
+    [Header("Расстояние начала атаки(уже нормально выставлено, не может быть меньше 3)")]
+    public float visAttack = 3f;
+    [Header("Скорость хотьбы")]
+    public float walkSpeed = 3f;
+    [Header("Скорость бега")]
+    public float runSpeed = 8f;
+    [Header("Сила толчка")]
+    [SerializeField] float force = 50f;
+    [Header("Урон")]
+    [SerializeField] int damage = 10;
+
+    
+   
+    [Header("-----Inside set-----")]
     public Transform attackPoint;
     public string state;
     public Transform groungDetection;
-    [SerializeField] float attackRange;
     [SerializeField] LayerMask playerLayer;
     Animator anim;
-
-    //public NavMeshAgent agent;
+    public bool finishedAttack;
+    PlayerMovement[] players;
+    Transform player1;
+    Transform player2;
+    public State currentState;
 
     void Start()
     {
-        //agent = GetComponent<NavMeshAgent>();
+        players = Resources.FindObjectsOfTypeAll<PlayerMovement>();
+        player1 = players[0].transform;
+        player2 = players[1].transform;
+
         currentState = new Idle(gameObject, player1, player2);
         anim = GetComponent<Animator>();
     }
@@ -37,24 +55,24 @@ public class MushDeer : MonoBehaviour
 
     public void AttackPlayer()
     {
-        finishedAttack = false;
-        anim.SetTrigger("attack");
+        //finishedAttack = false;
+        //anim.SetTrigger("attack");
         Collider2D[] players = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
         foreach (Collider2D player in players)
         {
             PlayerMovement pm =  player.GetComponent<PlayerMovement>();
             if(transform.localScale.x >0)
             {
-                pm.forceee = -50f;
+                pm.forceee = -force;
             }
             else
             {
-                pm.forceee = 50f;
+                pm.forceee = force;
             }
             pm.fff = true;
             pm.deerforce = pm.deerForce.Evaluate(0);
             PlayerHealth playerH = player.GetComponent<PlayerHealth>();
-            playerH.TakeDamage(20);
+            playerH.TakeDamage(damage);
         }
     }
 
@@ -87,6 +105,8 @@ public class MushDeer : MonoBehaviour
         protected MushDeer deer;
         protected Animator anim;
 
+        protected float runSpeed;
+        protected float walkSpeed;
         float visDist = 20f;
         float visAttack = 3f;
 
@@ -101,10 +121,12 @@ public class MushDeer : MonoBehaviour
             waypoints = deer.waypoints;
             rb = enemy.GetComponent<Rigidbody2D>();
             anim = deer.anim;
-
+            visAttack = deer.visAttack;
+            visDist = deer.visDist;
+            runSpeed = deer.runSpeed;
+            walkSpeed = deer.walkSpeed;
             //groundDetection = enemyfsm.groungDetection;
             //castPoint = enemyfsm.castPoint;
-            //agent = enemyfsm.agent;
 
         }
 
@@ -158,12 +180,12 @@ public class MushDeer : MonoBehaviour
         public Idle(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.IDLE;
-            //agent.speed = 0f;
 
         }
 
         public override void Enter()
         {
+            //???
             //anim.SetTrigger("idle");
             base.Enter();
             timer = Random.Range(1f, 2.5f);
@@ -176,17 +198,18 @@ public class MushDeer : MonoBehaviour
             else
                 player = player2;
 
-
-            if (CanSeePlayer())
+            if (CanAttackPlayer(player) && Mathf.Abs(player.transform.position.y - enemy.transform.position.y) <= 2f)
+            {
+                anim.SetTrigger("attack");
+                nextState = new Attack(enemy, player1, player2);
+                stage = EVENT.EXIT;
+            }
+            else if (CanSeePlayer() && Mathf.Abs(player.transform.position.y - enemy.transform.position.y) <= 2f)
             {
                 nextState = new Pursue(enemy, player1, player2);
                 stage = EVENT.EXIT;
             }
-            else if (CanAttackPlayer(player))
-            {
-                nextState = new Attack(enemy, player1, player2);
-                stage = EVENT.EXIT;
-            }
+            
 
             if (timer > 0)
             {
@@ -239,25 +262,24 @@ public class MushDeer : MonoBehaviour
                 }
             }
 
-
-            if (CanAttackPlayer(player))
+            if (CanAttackPlayer(player) && Mathf.Abs(player.transform.position.y - enemy.transform.position.y)<=3f)
             {
                 nextState = new Attack(enemy, player1, player2);
                 stage = EVENT.EXIT;
             }
-            else if (!CanSeePlayer())
+            else if (!CanSeePlayer() || Mathf.Abs(player.transform.position.y - enemy.transform.position.y) >= 3f)
             {
                 nextState = new Patrol(enemy, player1, player2);
                 stage = EVENT.EXIT;
             }
             else if (player.position.x > enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(8f, 0);
+                rb.velocity = new Vector2(runSpeed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(-8f, 0);
+                rb.velocity = new Vector2(-runSpeed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
         }
@@ -279,18 +301,16 @@ public class MushDeer : MonoBehaviour
         public Patrol(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.PATROL;
-            //agent.speed = 2f;
         }
 
         public override void Update()
         {
-            //скорректировать
             if (player1.gameObject.activeInHierarchy)
                 player = player1;
             else
                 player = player2;
 
-            if (CanSeePlayer())
+            if (CanSeePlayer() && Mathf.Abs(player.transform.position.y - enemy.transform.position.y) <= 2f)
             {
                 nextState = new Pursue(enemy, player1, player2);
                 stage = EVENT.EXIT;
@@ -327,12 +347,12 @@ public class MushDeer : MonoBehaviour
         {
             if (waypoints[currentWaypoint].transform.position.x < enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(-3, 0);
+                rb.velocity = new Vector2(-walkSpeed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(3, 0);
+                rb.velocity = new Vector2(walkSpeed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
         }
@@ -354,12 +374,11 @@ public class MushDeer : MonoBehaviour
                 player = player2;
 
             rb.velocity = new Vector2(0, 0);
-            if (timer <= 0)
-            {
-                deer.AttackPlayer();
-                timer = 1.5f;
-            }
-            else timer -= Time.deltaTime;
+            
+            deer.AttackPlayer();
+            
+            
+            
 
 
             if (player.position.x > enemy.transform.position.x)
@@ -371,11 +390,11 @@ public class MushDeer : MonoBehaviour
                 enemy.transform.localScale = new Vector2(1, 1);
             }
 
-            if(deer.finishedAttack == true)
-            {
+            //if (timer <= 0)
+            //{
                 nextState = new Idle(enemy, player1, player2);
                 stage = EVENT.EXIT;
-            }
+            //}
             /*
                 if (!canSee())
                 {

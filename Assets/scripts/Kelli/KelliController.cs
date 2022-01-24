@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class KelliController : MonoBehaviour
 {
+    [Header("-----Inside set-----")]
     public bool craftIsActive;
     [SerializeField] GameObject craft;
     [SerializeField] GameObject platformInterface;

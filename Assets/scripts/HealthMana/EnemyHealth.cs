@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Custom settings")]
+    [Header("«доровье")]
     [SerializeField] private int health = 100;
+    [Header("Ёффект после смерти, если он есть")]
     public GameObject deathEffect;
+    [Header("¬ыпадающий предмет, если есть")]
     public GameObject potion;
 
     public void TakeDamage(int damage)

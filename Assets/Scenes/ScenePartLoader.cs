@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ScenePartLoader : MonoBehaviour
 {
-    public Transform player1;
-    public Transform player2;
-    public float loadRange;
 
     private bool isLoaded;
     private bool shoudLoad;
 
+
+
     void Start()
     {
-        
+
     }
 
     void Update()

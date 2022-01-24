@@ -4,34 +4,50 @@ using UnityEngine;
 
 public class wolf : MonoBehaviour
 {
-    public bool finishedAttack;
-
-
+    [Header("Custom Settings")]
     public List<GameObject> waypoints = new List<GameObject>();
-    public Transform player1;
-    public Transform player2;
+    [Header("Радиус атаки")]
+    [SerializeField] float attackRange;
+    [Header("Расстояние, на котором враг видит игрока")]
+    public float visDist = 20f;
+    [Header("Расстояние начала атаки")]
+    public float visAttack = 3f;
+    [Header("Скорость хотьбы")]
+    public float walkSpeed = 3f;
+    [Header("Скорость бега")]
+    public float runSpeed = 5f;
+    [Header("Урон")]
+    [SerializeField] int damage = 10;
+
+    [Header("-----Inside set-----")]
+    public bool finishedAttack;
+    Transform player1;
+    Transform player2;
     State currentState;
     public Transform attackPoint;
-    public string state;
     public Transform groungDetection;
-    [SerializeField] float attackRange;
     [SerializeField] LayerMask playerLayer;
     Animator anim;
-
-    //public NavMeshAgent agent;
+    PlayerMovement[] players;
+    //public string state;
 
     void Start()
     {
-        //agent = GetComponent<NavMeshAgent>();
+        players = Resources.FindObjectsOfTypeAll<PlayerMovement>();
+        player1 = players[0].transform;
+        player2 = players[1].transform;
+
         currentState = new Idle(gameObject, player1, player2);
         anim = GetComponent<Animator>();
+
+
     }
 
 
     void Update()
     {
         currentState = currentState.Process();
-        state = currentState.name.ToString();
+        //state = currentState.name.ToString();
     }
 
 
@@ -43,7 +59,7 @@ public class wolf : MonoBehaviour
         foreach (Collider2D player in players)
         {
             PlayerHealth playerH = player.GetComponent<PlayerHealth>();
-            playerH.TakeDamage(20);
+            playerH.TakeDamage(damage);
         }
     }
 
@@ -76,6 +92,8 @@ public class wolf : MonoBehaviour
         protected wolf wolf;
         protected Animator anim;
 
+        protected float walkSpeed;
+        protected float runSpeed;
         float visDist = 20f;
         float visAttack = 3f;
 
@@ -92,7 +110,10 @@ public class wolf : MonoBehaviour
             anim = wolf.anim;
             //groundDetection = enemyfsm.groungDetection;
             //castPoint = enemyfsm.castPoint;
-            //agent = enemyfsm.agent;
+            visDist = wolf.visDist;
+            visAttack = wolf.visAttack;
+            walkSpeed = wolf.walkSpeed;
+            runSpeed = wolf.runSpeed;
 
         }
 
@@ -146,8 +167,6 @@ public class wolf : MonoBehaviour
         public Idle(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.IDLE;
-            //agent.speed = 0f;
-
         }
 
         public override void Enter()
@@ -239,12 +258,12 @@ public class wolf : MonoBehaviour
             }
             else if (player.position.x > enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(5f, 0);
+                rb.velocity = new Vector2(runSpeed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(-5f, 0);
+                rb.velocity = new Vector2(-runSpeed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
         }
@@ -267,12 +286,10 @@ public class wolf : MonoBehaviour
         public Patrol(GameObject _enemy, Transform _player1, Transform _player2) : base(_enemy, _player1, _player2)
         {
             name = STATE.PATROL;
-            //agent.speed = 2f;
         }
 
         public override void Update()
         {
-            //скорректировать
             if (player1.gameObject.activeInHierarchy)
                 player = player1;
             else
@@ -316,12 +333,12 @@ public class wolf : MonoBehaviour
         {
             if (waypoints[currentWaypoint].transform.position.x < enemy.transform.position.x)
             {
-                rb.velocity = new Vector2(-3, 0);
+                rb.velocity = new Vector2(-walkSpeed, 0);
                 enemy.transform.localScale = new Vector2(1, 1);
             }
             else
             {
-                rb.velocity = new Vector2(3, 0);
+                rb.velocity = new Vector2(walkSpeed, 0);
                 enemy.transform.localScale = new Vector2(-1, 1);
             }
         }

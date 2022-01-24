@@ -4,47 +4,58 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool fff;
-
-    public Animator animator;
-    public bool jump = false;
-    public bool sqade = false;
-    public bool attack = false;
-    public bool canMove = true;
+    [Header("Custom settings")]
+    [Header("Скорость")]
     public float speed;
+    [Header("Сила прыжка")]
     public float jumpForce;
-    public Rigidbody2D rb;
-    Vector2 horizontalMove;
-    bool LeftClickWasClicked = false;
-    public GroundCheck gcheck;
-    public GameObject shere;
-    public GameObject spawner;
-    KelliController controller;
-    //Player player;
-    SelectPlayer selectPlayer;
-    public GameObject partner;
-    Vector3 correctPos;
-    //public GameObject selectedCharacter;
+    
 
     [Header("Shon settings")]
     [SerializeField] Transform attackPoint;
+    [Header("Радиус атаки мечом")]
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
+    [Header("Кривая разгона суперспособности")]
     [SerializeField] AnimationCurve forceAnim;
+    [Header("Кривая удара оленя(отскок)")]
     [SerializeField] public AnimationCurve deerForce;
 
 
     //изменения
+    [Header("Скорость способности разгоняться")]
     [SerializeField] [Range(0f, 10f)] float runSpeed;
     bool run = false;
-    [SerializeField] float timerLimit;
+    //[SerializeField] float timerLimit;
 
+    
+
+    [Header("-----Inside set-----")]
+    public bool fff;
+    Vector2 horizontalMove;
+    public Rigidbody2D rb;
+    //Player player;
+    SelectPlayer selectPlayer;
+    public GameObject partner;
+    Vector3 correctPos;
+    public GroundCheck gcheck;
+    public GameObject shere;
+    public GameObject spawner;
+    //public GameObject selectedCharacter;
+    //bool LeftClickWasClicked = false;
+    KelliController controller;
     float force;
     float time;
     float time1;
 
     public float deerforce;
     public float forceee;
+
+    public Animator animator;
+    public bool jump = false;
+    public bool sqade = false;
+    public bool attack = false;
+    public bool canMove = true;
 
     void Start()
     {
