@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
     {
         kelli = KelliPlayer.GetComponent<PlayerMovement>();
         shon = ShonPlayer.GetComponent<PlayerMovement>();
+
+        //Screen.fullScreenMode = FullScreenMode.Windowed;
     }
 
 

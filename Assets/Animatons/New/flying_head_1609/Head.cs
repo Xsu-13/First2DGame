@@ -197,6 +197,10 @@ public class Head : MonoBehaviour
 
         public bool CanSeePlayer()
         {
+            if (player.tag == "invisPlayer")
+            {
+                return false;
+            }
             Vector3 direction = player.position - enemy.transform.position;
             if (direction.magnitude < visDist)
             {
@@ -404,6 +408,7 @@ public class Head : MonoBehaviour
             }
             else
             {
+                enemyHead.target = enemyHead.waypoints[currentWaypoint].transform;
                 if (Mathf.Abs(enemy.transform.position.x - waypoints[currentWaypoint].transform.position.x) <= 4f)
                 {
                     currentWaypoint += 1;                    
@@ -416,8 +421,12 @@ public class Head : MonoBehaviour
 
                     enemyHead.currentWaypoint = currentWaypoint;
                     enemyHead.target = enemyHead.waypoints[currentWaypoint].transform;
-                    //Debug.Log(currentWaypoint);
+
                 }
+                if ((enemyHead.waypoints[currentWaypoint].transform.position.x > enemy.transform.position.x))
+                    enemy.transform.localScale = new Vector2(-1, 1);
+                else
+                    enemy.transform.localScale = new Vector2(1, 1);
             }
         }
         public override void Enter()

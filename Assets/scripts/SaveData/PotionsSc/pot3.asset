@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: pot3
   m_EditorClassIdentifier: 
   potionScore: 0
-  description: 
-  count: 0
+  description: "\u0414\u0435\u043B\u0430\u0435\u0442 \u043D\u0435\u0432\u0438\u0434\u0438\u043C\u044B\u043C"
+  count: 3
   type: 3
-  Name: 
+  Name: "\u041D\u0435\u0432\u0438\u0434\u0438\u043C\u043E\u0441\u0442\u044C"

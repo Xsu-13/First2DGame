@@ -5,6 +5,7 @@ using UnityEngine;
 public class ingredientObj : MonoBehaviour
 {
     public GameObject craftObj;
+    public ScObjIngredient ingSc;
     // Start is called before the first frame update
     void Start()
     {

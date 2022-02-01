@@ -148,6 +148,10 @@ public class MushDeer : MonoBehaviour
 
         public bool CanSeePlayer()
         {
+            if (player.tag == "invisPlayer")
+            {
+                return false;
+            }
             Vector3 direction = player.position - enemy.transform.position;
             if (direction.magnitude < visDist)
             {
@@ -188,7 +192,7 @@ public class MushDeer : MonoBehaviour
             //???
             //anim.SetTrigger("idle");
             base.Enter();
-            timer = Random.Range(1f, 2.5f);
+            timer = Random.Range(0.2f, 1f);
         }
 
         public override void Update()
@@ -200,7 +204,7 @@ public class MushDeer : MonoBehaviour
 
             if (CanAttackPlayer(player) && Mathf.Abs(player.transform.position.y - enemy.transform.position.y) <= 2f)
             {
-                anim.SetTrigger("attack");
+                //anim.SetTrigger("attack");
                 nextState = new Attack(enemy, player1, player2);
                 stage = EVENT.EXIT;
             }
@@ -217,7 +221,7 @@ public class MushDeer : MonoBehaviour
                 timer -= Time.deltaTime;
 
             }
-            else if (Random.Range(0, 1000) < 10)
+            else if (Random.Range(0, 1000) < 700)
             {
                 nextState = new Patrol(enemy, player1, player2);
                 stage = EVENT.EXIT;
@@ -375,7 +379,7 @@ public class MushDeer : MonoBehaviour
 
             rb.velocity = new Vector2(0, 0);
             
-            deer.AttackPlayer();
+           deer.AttackPlayer();
             
             
             
@@ -447,6 +451,7 @@ public class MushDeer : MonoBehaviour
         public override void Enter()
         {
             base.Enter();
+           
         }
         public override void Exit()
         {

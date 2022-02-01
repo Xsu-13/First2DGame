@@ -33,17 +33,20 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHelth <= 0)
         {
-            SceneManager.LoadScene("Game Over");
+            //SceneManager.LoadScene("Game Over");
             //animator.SetBool("die", true);
             //playerMovement.enabled = false;
         }
     }
     public void TakeDamage(int damage)
     {
-        currentHelth -= damage;
-        healthBar.SetHealth(currentHelth);
-        mat.SetFloat("_FillPhase", 0.4f);
-        Invoke("Return", 0.2f);
+        if (playerMovement.shield == false)
+        {
+            currentHelth -= damage;
+            healthBar.SetHealth(currentHelth);
+            mat.SetFloat("_FillPhase", 0.4f);
+            Invoke("Return", 0.2f);
+        }
     }
 
     public void SetHealth(int health)

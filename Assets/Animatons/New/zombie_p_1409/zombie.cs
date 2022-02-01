@@ -131,6 +131,10 @@ public class zombie : MonoBehaviour
 
         public bool CanSeePlayer()
         {
+            if (player.tag == "invisPlayer")
+            {
+                return false;
+            }
             Vector3 direction = player.position - enemy.transform.position;
             if (direction.magnitude < visDist)
             {
@@ -168,7 +172,7 @@ public class zombie : MonoBehaviour
         public override void Enter()
         {
             base.Enter();
-            timer = Random.Range(1f, 2.5f);
+            timer = Random.Range(0.1f, 0.8f);
         }
 
         public override void Update()
@@ -196,7 +200,7 @@ public class zombie : MonoBehaviour
                 timer -= Time.deltaTime;
 
             }
-            else if (Random.Range(0, 1000) < 10)
+            else if (Random.Range(0, 1000) < 700)
             {
                 nextState = new Patrol(enemy, player1, player2);
                 stage = EVENT.EXIT;

@@ -21,4 +21,5 @@ public class platformerSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    
 }

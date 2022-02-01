@@ -24,9 +24,10 @@ public class PlayerPickUp : MonoBehaviour
         if(collision.CompareTag("ingredient"))
         {
             ingredientObj ingredientObjSc = collision.GetComponent<ingredientObj>();
-
+            ingredientObjSc.ingSc.count += 1;
             Ingredient ingredientSc = ingredientObjSc.craftObj.GetComponent<Ingredient>();
             notion.text = ingredientSc.Name + " x 1";
+            
             ingredientSc.count += 1;
             Destroy(collision.gameObject);
 
@@ -37,7 +38,8 @@ public class PlayerPickUp : MonoBehaviour
         {
             pickUp pickUpSc = collision.GetComponent<pickUp>();
             Potion potionSc = pickUpSc.craftObj.GetComponent<Potion>();
-            potionSc.count.Value += 1;
+            //potionSc.count.Value += 1;
+            pickUpSc.potSc.count += 1;
             notion.text = potionSc.Name + " x 1";
             
             

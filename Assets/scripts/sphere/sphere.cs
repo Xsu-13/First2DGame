@@ -9,7 +9,7 @@ public class sphere : MonoBehaviour
     GameObject spawner;
     GameObject player;
     float scale;
-    int damage = 30;
+    public int damage = 30;
     Animator anim;
 
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class sphere : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spawner = player.GetComponent<PlayerMovement>().spawner;
         anim = GetComponent<Animator>();
+
 
         if (player.transform.localScale.x > 0)
         {
@@ -54,13 +55,11 @@ public class sphere : MonoBehaviour
         {
             enemy.TakeDamage(damage);            
         }
-        Debug.Log("Trigger");
         Destroy(gameObject);
     }
 
     public void Turn()
     {
         transform.localScale = new Vector3(scale, transform.localScale.y, transform.localScale.z);
-        Debug.Log("Turn!");
     }
 }

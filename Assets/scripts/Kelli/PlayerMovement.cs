@@ -9,10 +9,15 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     [Header("Сила прыжка")]
     public float jumpForce;
-    
+
+    [Header("Kelli settings")]
+    [Header("Урон Келли")]
+    [SerializeField]int kelliDamage = 20;
 
     [Header("Shon settings")]
     [SerializeField] Transform attackPoint;
+    [Header("Урон Шона")]
+    [SerializeField]int shonDamage = 20;
     [Header("Радиус атаки мечом")]
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
@@ -21,16 +26,27 @@ public class PlayerMovement : MonoBehaviour
     [Header("Кривая удара оленя(отскок)")]
     [SerializeField] public AnimationCurve deerForce;
 
+    [SerializeField] int attackMana = 20;
 
     //изменения
-    [Header("Скорость способности разгоняться")]
-    [SerializeField] [Range(0f, 10f)] float runSpeed;
+   //[Header("Скорость способности разгоняться")]
+   [SerializeField] [Range(0f, 10f)] float runSpeed;
     bool run = false;
+    [Header("Таймер щита")]
+    [SerializeField] float timerShield = 10f;
+    public bool shield = false;
+    float shieldTimer;
+
+    [SerializeField]public  Material mat;
+    [SerializeField] GameObject regenObj;
+    Regen regen;
     //[SerializeField] float timerLimit;
 
-    
+
 
     [Header("-----Inside set-----")]
+    public GameObject jumpCheck;
+    public LayerMask ground;
     public bool fff;
     Vector2 horizontalMove;
     public Rigidbody2D rb;
@@ -57,6 +73,17 @@ public class PlayerMovement : MonoBehaviour
     public bool attack = false;
     public bool canMove = true;
 
+    PlayerMana mana;
+
+    BoxCollider2D collider;
+    Vector2 colOffset;
+    Vector2 colSize;
+    Vector2 prizeColOffset;
+    Vector2 prizeColSize;
+    Vector2 spawnerPos;
+
+    [SerializeField] GameObject mate;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,8 +91,17 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<KelliController>();
         //player = new Player(new Kelli());
         selectPlayer = FindObjectOfType<SelectPlayer>();
+        mana = GetComponent<PlayerMana>();
+        regen = regenObj.GetComponent<Regen>();
+        collider = GetComponent<BoxCollider2D>();
 
-        
+        colOffset = collider.offset;
+        colSize = collider.size;
+        prizeColOffset = new Vector2(0.6435308f, 1.654645f);
+        prizeColSize = new Vector2(1.840971f, 2.164669f);
+
+        spawnerPos = spawner.transform.localPosition;
+        shere.GetComponent<sphere>().damage = kelliDamage;
     }
 
     private void FixedUpdate()
@@ -107,6 +143,21 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.layer = 8;
                 run = false;
                 time = 0;
+                mat.SetFloat("_FillPhase", 0f);
+            }
+        }
+
+        if (shield == true)
+        {
+            if(shieldTimer <= timerShield)
+            {
+                shieldTimer += Time.deltaTime;
+            }
+            else
+            {
+                //gameObject.layer = 8;
+                shield = false;
+                mat.SetFloat("_FillPhase", 0f);
             }
         }
     }
@@ -140,10 +191,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-
-                //animator.SetTrigger("Attack");
-                animator.SetTrigger("attack1");
-                Attack();
+                if (mana.currentMana >= attackMana)
+                {
+                    //animator.SetTrigger("Attack");
+                    animator.SetTrigger("attack1");
+                    Attack();
+                }
             }
             /*
             if (Input.GetMouseButtonUp(0))
@@ -159,18 +212,23 @@ public class PlayerMovement : MonoBehaviour
 
             }
 
-            if (Input.GetKey(KeyCode.S) && gcheck.isGrounded == true)
+            if (Input.GetKeyDown(KeyCode.S) && gcheck.isGrounded == true)
             {
+                rb.velocity = new Vector2(0,0);
                 animator.SetTrigger("Sqade");
-                //sqade = true;
                 canMove = false;
+                collider.offset = prizeColOffset;
+                collider.size = prizeColSize;
+                spawner.transform.localPosition = new Vector2(2.51f, 1.75f);
             }
 
-            if (Input.GetKeyUp(KeyCode.S) && sqade == true)
+            if (Input.GetKeyUp(KeyCode.S) )
             {
                 animator.ResetTrigger("Sqade");
-                //sqade = false;
                 canMove = true;
+                collider.offset = colOffset;
+                collider.size = colSize;
+                spawner.transform.localPosition = spawnerPos;
             }
 
             
@@ -178,16 +236,40 @@ public class PlayerMovement : MonoBehaviour
             {
                 Switch();
             }
-            
-            //Рывок
-            if (Input.GetKeyDown(KeyCode.R) && selectPlayer.player.currentCharacter == Characters.KelliCharacter)
+
+
+            //Суперспособности
+            if (Input.GetKeyDown(KeyCode.R) && regen.regenImg.fillAmount >= 1)
             {
-                gameObject.layer = 9;
-                run = true;
-                force = forceAnim.Evaluate(0);
+                //Рывок
+                if (selectPlayer.player.currentCharacter == Characters.KelliCharacter && run == false && shield == false)
+                {
+                    //Debug.Log("Рывок");
+                    gameObject.layer = 9;
+                    run = true;
+                    force = forceAnim.Evaluate(0);
+                    regen.regenImg.fillAmount = 0;
+                }
+                //Щит
+                if (selectPlayer.player.currentCharacter == Characters.ShonCharacter && shield == false && run == false)
+                {
+                    //Debug.Log("Щит");
+                    //gameObject.layer = 9;
+                    shield = true;
+                    shieldTimer = 0;
+                    mat.SetFloat("_FillPhase", 0.4f);
+                    regen.regenImg.fillAmount = 0;
+                }
             }
-            
-            
+
+
+            if(jump == true)
+            {
+                if(Physics.CheckSphere(jumpCheck.transform.position, 0.2f, ground))
+                {
+                    animator.SetTrigger("land");
+                }
+            }
 
             //Для проверки
             /*
@@ -206,23 +288,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Attack()
     {
-        selectPlayer.player.Attack();
-        //корректуируем
-        if(selectPlayer.player.currentCharacter == Characters.KelliCharacter)
-            Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
-        else
-        {
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-            foreach(Collider2D enemy in hitEnemies)
+        
+            selectPlayer.player.Attack();
+            //корректуируем
+            if (selectPlayer.player.currentCharacter == Characters.KelliCharacter)
+                Instantiate(shere, spawner.transform.position, spawner.transform.rotation);
+            else
             {
-                EnemyHealth enemyH = enemy.GetComponent<EnemyHealth>();
-                enemyH.TakeDamage(20);
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    EnemyHealth enemyH = enemy.GetComponent<EnemyHealth>();
+                    enemyH.TakeDamage(shonDamage);
+                }
             }
-        }
+
+            mana.TakeDamage(attackMana);
+        
+
     }
     void Jump()
     {
-        animator.SetTrigger("Jump");
+        animator.SetBool("Jump", true);
+        jump = true;
         rb.velocity = Vector2.up * jumpForce;
         
     }
@@ -256,5 +344,84 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<PlayerHealth>().AddHealth(20);
         }
+        if (type == PotionType.type1)
+        {
+            GetComponent<PlayerMana>().AddMana(20);
+        }
+        if (type == PotionType.type2)
+        {
+            Debug.Log("FORCE!!");
+            if (selectPlayer.player.currentCharacter == Characters.KelliCharacter)
+            {
+                kelliDamage += 15;
+                shere.GetComponent<sphere>().damage = kelliDamage;
+                Invoke("ResetPotionKelli", 20f);
+            }
+                //sphere.
+            else
+            {
+                shonDamage += 15;
+                Invoke("ResetPotionShon", 20f);
+            }
+        }
+        if (type == PotionType.type3)
+        {
+            gameObject.tag = "invisPlayer";
+            mate.tag = "invisPlayer";
+            mat.SetFloat("_FillPhase", 0.6f);
+            mate.GetComponent<PlayerMovement>().mat.SetFloat("_FillPhase", 0.6f);
+            Invoke("ResetPot3", 15f);
+        }
+        if (type == PotionType.type4)
+        {
+
+        }
+        if (type == PotionType.type5)
+        {
+
+        }
+        if (type == PotionType.type6)
+        {
+
+        }
+        if (type == PotionType.type7)
+        {
+
+        }
+        if (type == PotionType.type8)
+        {
+
+        }
+        if (type == PotionType.type9)
+        {
+
+        }
+        if (type == PotionType.type10)
+        {
+
+        }
+        if (type == PotionType.type11)
+        {
+
+        }
+
+    }
+    private void ResetPotionKelli()
+    {
+        Debug.Log("reset");
+        kelliDamage -= 15;
+        shere.GetComponent<sphere>().damage = kelliDamage;
+    }
+    private void ResetPotionShon()
+    {
+        Debug.Log("reset");
+        shonDamage -= 15;
+    }
+    private void ResetPot3()
+    {
+        gameObject.tag = "Player";
+        mate.tag = "Player";
+        mat.SetFloat("_FillPhase", 0f);
+        mate.GetComponent<PlayerMovement>().mat.SetFloat("_FillPhase", 0f);
     }
 }

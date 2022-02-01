@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Custom settings")]
     [Header("«доровье")]
-    [SerializeField] private int health = 100;
+    [SerializeField] public int health;
     [Header("Ёффект после смерти, если он есть")]
     public GameObject deathEffect;
     [Header("¬ыпадающий предмет, если есть")]
@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log("health");
         if (health <= 0)
             Die();
     }

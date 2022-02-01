@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexForSave: 9
+  PotionLink: {fileID: 11400000, guid: d941373bacb1baa438618ee395a81790, type: 2}
 --- !u!1001 &8081604388237856651
 PrefabInstance:
   m_ObjectHideFlags: 0

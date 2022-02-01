@@ -135,6 +135,10 @@ public class wolf : MonoBehaviour
 
         public bool CanSeePlayer()
         {
+            if(player.tag == "invisPlayer")
+            {
+                return false;
+            }
             Vector3 direction = player.position - enemy.transform.position;
             if (direction.magnitude < visDist)
             {

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: pot0
   m_EditorClassIdentifier: 
   potionScore: 13
-  description: djhsjhg
+  description: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
+    \u0436\u0438\u0437\u043D\u0438"
   count: 3
   type: 0
-  Name: fsdafjahj
+  Name: "\u041B\u0435\u0447\u0435\u043D\u0438\u0435"

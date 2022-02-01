@@ -163,6 +163,6 @@ public struct GameCoreStruct
     public List<int> potInSlot;
     public int KelliHealth;
     public int ShonHealth;
-    public int KelliMana;
-    public int ShonMana;
+    public float KelliMana;
+    public float ShonMana;
 }

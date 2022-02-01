@@ -53,14 +53,14 @@ public class ScenePartLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") || collision.CompareTag("invisPlayer"))
         {
             shoudLoad = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") || collision.CompareTag("invisPlayer"))
         {
             shoudLoad = false;
         }

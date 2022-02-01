@@ -37,7 +37,7 @@ class Kelli : Character
     public override Characters currentCharacter { get; set; } = Characters.KelliCharacter;
     public override void Attack()
     {
-        Debug.Log("Kelli attack");
+        //Debug.Log("Kelli attack");
     }
 
     public override void Switch(Player player)
@@ -53,7 +53,7 @@ class Shon : Character
     public override Characters currentCharacter { get; set; } = Characters.ShonCharacter;
     public override void Attack()
     {
-        Debug.Log("Shon attack");
+        //Debug.Log("Shon attack");
     }
 
     public override void Switch(Player player)
