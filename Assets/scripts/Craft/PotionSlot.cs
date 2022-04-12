@@ -89,7 +89,7 @@ public class PotionSlot : MonoBehaviour, IDropHandler, IPointerDownHandler
             if(PotionDragDrop.startParentInd >= 0)
             {
                 playerpu.RemoveInInventory(PotionDragDrop.startParentInd);
-                Debug.Log(PotionDragDrop.startParentInd);
+                //Debug.Log(PotionDragDrop.startParentInd);
                 inventorySc.count[PotionDragDrop.startParentInd].GetComponent<TMP_Text>().text = "0";
             }
             itemInInventory = playerpu.InstantiateInInventory(potionItem.GetComponent<Potion>().inventorySprite, mySlotTypeSc.slotIndex, potionItem.GetComponent<Potion>().type, potionItem.GetComponent<Potion>().count.Value);

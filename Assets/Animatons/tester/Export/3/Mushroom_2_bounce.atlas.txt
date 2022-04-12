@@ -1,0 +1,48 @@
+
+Mushroom_2_bounce.png
+size: 296,336
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 202
+  size: 292, 132
+  orig: 292, 144
+  offset: 0, 0
+  index: -1
+Effect1
+  rotate: false
+  xy: 100, 2
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+Effect2
+  rotate: true
+  xy: 233, 19
+  size: 94, 57
+  orig: 94, 57
+  offset: 0, 0
+  index: -1
+Effect3
+  rotate: true
+  xy: 2, 18
+  size: 95, 96
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 115
+  size: 276, 85
+  orig: 276, 85
+  offset: 0, 0
+  index: -1
+head_decor
+  rotate: false
+  xy: 100, 67
+  size: 131, 46
+  orig: 131, 46
+  offset: 0, 0
+  index: -1

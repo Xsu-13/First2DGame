@@ -10,6 +10,7 @@ public class ShowDescription : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] TMP_Text description;
     [SerializeField] GameObject descriptionPanel;
     Potion potion;
+    [SerializeField] GameObject potionItem;
     //Text scoreText;
     //Text descriptionText;
     public void OnPointerEnter(PointerEventData eventData)
@@ -27,7 +28,7 @@ public class ShowDescription : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     void Start()
     {
-        potion = GetComponent<Potion>();
+        potion = potionItem.GetComponent<Potion>();
         //scoreText = score.GetComponent<Text>();
         //descriptionText = description.GetComponent<Text>();
     }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potionScore: 0
   description: 
-  count: 0
+  count: 1
   type: 5
-  Name: 
+  Name: "\u041D\u0435\u0442"

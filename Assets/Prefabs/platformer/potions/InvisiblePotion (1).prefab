@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
-  craftObj: {fileID: 0}
+  craftObj: {fileID: 2229219173283305666, guid: 5025176146aff584ca3dca4bd2f0d96c, type: 3}
   itemButton: {fileID: 8031301611950138412, guid: 8d3f3f2e8fe6d104691758d2c2c6e465, type: 3}
   countText: {fileID: 0}
   count: 0
   type: 2
+  potSc: {fileID: 11400000, guid: 439419c3fc50c8e4b89dcb82f2acbee8, type: 2}
 --- !u!61 &4323571488663856968
 BoxCollider2D:
   m_ObjectHideFlags: 0

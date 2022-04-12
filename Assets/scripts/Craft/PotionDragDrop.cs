@@ -20,6 +20,7 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     Potion pot;
     public static int startParentInd;
 
+
     public void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -46,6 +47,7 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         if(startParent.GetComponent<SlotType>() != null)
         {
             startParentInd = startParent.GetComponent<SlotType>().slotIndex;
+            startParent.transform.SetSiblingIndex(4);
         }
        
     }
@@ -61,8 +63,10 @@ public class PotionDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
-        if(transform.parent == startParent)
+        
+        if (transform.parent == startParent)
             transform.position = startPos;
+
         itemBeingDrages = null;
     }
 

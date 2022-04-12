@@ -105,26 +105,31 @@ public class Inventory : MonoBehaviour
         }
 
         slots[i].GetComponent<Image>().sprite = selectSprite;
-        if(slots[i].transform.childCount >1)
+
+        if (slots[i].transform.childCount >1)
         {
             forSaving currentPotion = slots[i].transform.GetChild(1).gameObject.GetComponent<forSaving>();
-            currentPotion.PotionLink.count -= 1;
-            int c = currentPotion.PotionLink.count;
-            count[i].GetComponent<TMP_Text>().text = c.ToString();
-            if(KelliPlayer.activeInHierarchy)
+            if(currentPotion.PotionLink.count>0)
             {
-                kelli.PotionActivate(currentPotion.PotionLink.type);
+                currentPotion.PotionLink.count -= 1;
+                int c = currentPotion.PotionLink.count;
+                count[i].GetComponent<TMP_Text>().text = c.ToString();
+                if (KelliPlayer.activeInHierarchy)
+                {
+                    kelli.PotionActivate(currentPotion.PotionLink.type);
+                }
+                else
+                {
+                    shon.PotionActivate(currentPotion.PotionLink.type);
+                }
+                if (currentPotion.PotionLink.count == 0)
+                {
+                    //дндекюрэ!!!
+                    Destroy(slots[i].transform.GetChild(1).gameObject);
+                    craftInventory[i].GetComponent<PotionSlot>().Return();
+                }
             }
-            else
-            {
-                shon.PotionActivate(currentPotion.PotionLink.type);
-            }
-            if(currentPotion.PotionLink.count == 0)
-            {
-                //дндекюрэ!!!
-                Destroy(slots[i].transform.GetChild(1).gameObject);
-                craftInventory[i].GetComponent<PotionSlot>().Return();
-            }
+            
 
         }
     }

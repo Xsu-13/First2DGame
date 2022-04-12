@@ -1,0 +1,167 @@
+
+Tank.png
+size: 854,1042
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_L
+  rotate: false
+  xy: 556, 279
+  size: 109, 108
+  orig: 109, 108
+  offset: 0, 0
+  index: -1
+Arm_R
+  rotate: false
+  xy: 656, 394
+  size: 96, 162
+  orig: 96, 162
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 442, 698
+  size: 274, 342
+  orig: 278, 342
+  offset: 0, 0
+  index: -1
+Ear_L
+  rotate: false
+  xy: 683, 91
+  size: 96, 58
+  orig: 96, 58
+  offset: 0, 0
+  index: -1
+Ear_R
+  rotate: false
+  xy: 762, 351
+  size: 90, 75
+  orig: 90, 76
+  offset: 0, 0
+  index: -1
+Effect_Hand_L_after
+  rotate: false
+  xy: 2, 122
+  size: 358, 480
+  orig: 366, 484
+  offset: 5, 3
+  index: -1
+Effect_Hand_R_after
+  rotate: false
+  xy: 2, 604
+  size: 438, 436
+  orig: 448, 445
+  offset: 6, 2
+  index: -1
+Effect_Rocks_kit
+  rotate: true
+  xy: 718, 751
+  size: 289, 125
+  orig: 292, 128
+  offset: 2, 1
+  index: -1
+Effect_cracks
+  rotate: false
+  xy: 2, 5
+  size: 381, 115
+  orig: 384, 118
+  offset: 2, 1
+  index: -1
+Foot_L
+  rotate: true
+  xy: 754, 428
+  size: 160, 96
+  orig: 160, 96
+  offset: 0, 0
+  index: -1
+Foot_R
+  rotate: true
+  xy: 556, 389
+  size: 167, 98
+  orig: 167, 108
+  offset: 0, 0
+  index: -1
+Forearm_L
+  rotate: true
+  xy: 490, 34
+  size: 100, 152
+  orig: 100, 166
+  offset: 0, 14
+  index: -1
+Forearm_R
+  rotate: false
+  xy: 362, 144
+  size: 180, 155
+  orig: 180, 155
+  offset: 0, 0
+  index: -1
+Hand_L
+  rotate: true
+  xy: 762, 249
+  size: 100, 84
+  orig: 100, 84
+  offset: 0, 0
+  index: -1
+Hand_R
+  rotate: false
+  xy: 667, 291
+  size: 93, 101
+  orig: 93, 106
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 385, 2
+  size: 140, 103
+  orig: 140, 103
+  offset: 0, 0
+  index: -1
+Head_decor
+  rotate: false
+  xy: 728, 151
+  size: 97, 96
+  orig: 97, 96
+  offset: 0, 0
+  index: -1
+Hip_L
+  rotate: false
+  xy: 362, 301
+  size: 192, 255
+  orig: 192, 255
+  offset: 0, 0
+  index: -1
+Hip_R
+  rotate: true
+  xy: 442, 558
+  size: 138, 275
+  orig: 158, 275
+  offset: 20, 0
+  index: -1
+Leg_L
+  rotate: false
+  xy: 544, 136
+  size: 114, 141
+  orig: 114, 141
+  offset: 0, 0
+  index: -1
+Leg_R
+  rotate: false
+  xy: 719, 590
+  size: 133, 159
+  orig: 133, 159
+  offset: 0, 0
+  index: -1
+Muzzle
+  rotate: true
+  xy: 660, 167
+  size: 110, 66
+  orig: 110, 66
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: true
+  xy: 644, 25
+  size: 109, 37
+  orig: 109, 37
+  offset: 0, 0
+  index: -1

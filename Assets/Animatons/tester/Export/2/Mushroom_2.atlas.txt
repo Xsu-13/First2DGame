@@ -1,0 +1,111 @@
+
+Mushroom_2.png
+size: 341,536
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 231, 11
+  size: 96, 120
+  orig: 96, 120
+  offset: 0, 0
+  index: -1
+Body_Decor_Top
+  rotate: false
+  xy: 280, 427
+  size: 59, 107
+  orig: 59, 107
+  offset: 0, 0
+  index: -1
+Effect1
+  rotate: false
+  xy: 260, 362
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+Effect2
+  rotate: true
+  xy: 253, 261
+  size: 94, 57
+  orig: 94, 57
+  offset: 0, 0
+  index: -1
+Effect3
+  rotate: false
+  xy: 244, 163
+  size: 95, 96
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+Leg_r_top
+  rotate: true
+  xy: 110, 287
+  size: 68, 141
+  orig: 68, 141
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 449
+  size: 276, 85
+  orig: 276, 85
+  offset: 0, 0
+  index: -1
+head_decor
+  rotate: false
+  xy: 92, 2
+  size: 131, 46
+  orig: 131, 46
+  offset: 0, 0
+  index: -1
+hip_L_down
+  rotate: false
+  xy: 2, 312
+  size: 106, 135
+  orig: 106, 135
+  offset: 0, 0
+  index: -1
+hip_L_top
+  rotate: true
+  xy: 105, 133
+  size: 66, 137
+  orig: 66, 139
+  offset: 0, 2
+  index: -1
+hip_R_down
+  rotate: false
+  xy: 2, 171
+  size: 101, 139
+  orig: 101, 139
+  offset: 0, 0
+  index: -1
+hip_r_top
+  rotate: true
+  xy: 105, 201
+  size: 84, 136
+  orig: 84, 136
+  offset: 0, 0
+  index: -1
+leg_L_down
+  rotate: true
+  xy: 110, 357
+  size: 90, 148
+  orig: 90, 148
+  offset: 0, 0
+  index: -1
+leg_L_top
+  rotate: true
+  xy: 92, 50
+  size: 81, 137
+  orig: 81, 137
+  offset: 0, 0
+  index: -1
+leg_R_down
+  rotate: false
+  xy: 2, 28
+  size: 88, 141
+  orig: 88, 141
+  offset: 0, 0
+  index: -1

@@ -31,12 +31,13 @@ public class PlayerMovement : MonoBehaviour
     //изменения
    //[Header("Скорость способности разгоняться")]
    [SerializeField] [Range(0f, 10f)] float runSpeed;
-    bool run = false;
+    public bool run = false;
     [Header("Таймер щита")]
     [SerializeField] float timerShield = 10f;
     public bool shield = false;
     float shieldTimer;
 
+    [Header("-----Inside set-----")]
     [SerializeField]public  Material mat;
     [SerializeField] GameObject regenObj;
     Regen regen;
@@ -44,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    [Header("-----Inside set-----")]
+ 
     public GameObject jumpCheck;
     public LayerMask ground;
     public bool fff;
@@ -144,6 +145,11 @@ public class PlayerMovement : MonoBehaviour
                 run = false;
                 time = 0;
                 mat.SetFloat("_FillPhase", 0f);
+
+                //new
+                partner.layer = 8;
+                PlayerMovement partnerMove = partner.GetComponent<PlayerMovement>();
+                partnerMove.run = false;
             }
         }
 
@@ -249,6 +255,11 @@ public class PlayerMovement : MonoBehaviour
                     run = true;
                     force = forceAnim.Evaluate(0);
                     regen.regenImg.fillAmount = 0;
+
+                    //new
+                    partner.layer = 9;
+                    PlayerMovement partnerMove = partner.GetComponent<PlayerMovement>();
+                    partnerMove.run = true;
                 }
                 //Щит
                 if (selectPlayer.player.currentCharacter == Characters.ShonCharacter && shield == false && run == false)
@@ -256,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
                     //Debug.Log("Щит");
                     //gameObject.layer = 9;
                     shield = true;
-                    shieldTimer = 0;
+                    shieldTimer = 0;                    
                     mat.SetFloat("_FillPhase", 0.4f);
                     regen.regenImg.fillAmount = 0;
                 }
@@ -327,7 +338,12 @@ public class PlayerMovement : MonoBehaviour
         partner.transform.position = transform.position + correctPos;
         partner.transform.localScale = transform.localScale;
         partner.SetActive(true);
+        //new
+        PlayerMovement partnerMove = partner.GetComponent<PlayerMovement>();
+        partnerMove.time = time;
+        //partner.layer = 8;
         gameObject.SetActive(false);
+        //gameObject.layer = 9;
     }
 
     private void OnDrawGizmosSelected()

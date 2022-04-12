@@ -12,14 +12,25 @@ public class Regen : MonoBehaviour
     void Start()
     {
         regenImg = GetComponent<Image>();
+
     }
 
 
     void Update()
     {
-        if(regenImg.fillAmount < 1)
+        if(regenImg.fillAmount == 0)
+        {
+            Invoke("Fill", 2f);
+        }
+        else if(regenImg.fillAmount < 1)
         {
             regenImg.fillAmount += speed;
         }
+        
+    }
+
+    void Fill()
+    {
+        regenImg.fillAmount += speed;
     }
 }

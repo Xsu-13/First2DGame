@@ -1,0 +1,223 @@
+
+Kelli.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 1035, 109
+  size: 47, 109
+  orig: 59, 113
+  offset: 12, 0
+  index: -1
+10
+  rotate: true
+  xy: 919, 217
+  size: 35, 139
+  orig: 35, 139
+  offset: 0, 0
+  index: -1
+11
+  rotate: true
+  xy: 736, 207
+  size: 45, 181
+  orig: 45, 181
+  offset: 0, 0
+  index: -1
+13
+  rotate: false
+  xy: 1053, 32
+  size: 68, 75
+  orig: 68, 75
+  offset: 0, 0
+  index: -1
+14
+  rotate: true
+  xy: 1051, 174
+  size: 41, 93
+  orig: 43, 94
+  offset: 1, 1
+  index: -1
+15
+  rotate: true
+  xy: 944, 94
+  size: 62, 89
+  orig: 62, 89
+  offset: 0, 0
+  index: -1
+16
+  rotate: false
+  xy: 1123, 3
+  size: 64, 40
+  orig: 65, 40
+  offset: 0, 0
+  index: -1
+3
+  rotate: true
+  xy: 444, 26
+  size: 52, 171
+  orig: 52, 172
+  offset: 0, 1
+  index: -1
+4
+  rotate: true
+  xy: 2, 3
+  size: 75, 261
+  orig: 138, 261
+  offset: 63, 0
+  index: -1
+6
+  rotate: true
+  xy: 2, 163
+  size: 89, 274
+  orig: 89, 275
+  offset: 0, 0
+  index: -1
+7
+  rotate: true
+  xy: 265, 2
+  size: 76, 177
+  orig: 76, 177
+  offset: 0, 0
+  index: -1
+8
+  rotate: true
+  xy: 534, 89
+  size: 98, 111
+  orig: 98, 111
+  offset: 0, 0
+  index: -1
+9
+  rotate: true
+  xy: 647, 90
+  size: 36, 139
+  orig: 36, 139
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 979, 8
+  size: 72, 84
+  orig: 72, 84
+  offset: 0, 0
+  index: -1
+Hvost
+  rotate: true
+  xy: 1146, 121
+  size: 131, 115
+  orig: 131, 115
+  offset: 0, 0
+  index: -1
+Noga
+  rotate: true
+  xy: 2, 80
+  size: 81, 269
+  orig: 82, 286
+  offset: 0, 0
+  index: -1
+Noga_Back
+  rotate: true
+  xy: 273, 80
+  size: 81, 259
+  orig: 82, 286
+  offset: 0, 0
+  index: -1
+Rubaska
+  rotate: true
+  xy: 278, 189
+  size: 63, 141
+  orig: 63, 141
+  offset: 0, 0
+  index: -1
+Rubaska_Back
+  rotate: true
+  xy: 421, 189
+  size: 63, 140
+  orig: 63, 140
+  offset: 0, 0
+  index: -1
+Ruka
+  rotate: true
+  xy: 762, 157
+  size: 48, 169
+  orig: 48, 169
+  offset: 0, 0
+  index: -1
+Ruka_Back
+  rotate: true
+  xy: 563, 203
+  size: 49, 171
+  orig: 49, 171
+  offset: 0, 0
+  index: -1
+Shlyapa
+  rotate: false
+  xy: 647, 128
+  size: 113, 73
+  orig: 113, 73
+  offset: 0, 0
+  index: -1
+Slyapa_Back
+  rotate: false
+  xy: 863, 27
+  size: 114, 64
+  orig: 114, 64
+  offset: 0, 0
+  index: -1
+Telo
+  rotate: true
+  xy: 721, 32
+  size: 56, 140
+  orig: 56, 140
+  offset: 0, 0
+  index: -1
+Ubka
+  rotate: true
+  xy: 617, 6
+  size: 81, 102
+  orig: 81, 102
+  offset: 0, 0
+  index: -1
+Uho
+  rotate: true
+  xy: 762, 129
+  size: 26, 52
+  orig: 26, 52
+  offset: 0, 0
+  index: -1
+Uho_Back
+  rotate: true
+  xy: 444, 4
+  size: 20, 40
+  orig: 20, 40
+  offset: 0, 0
+  index: -1
+Volosy_1
+  rotate: true
+  xy: 1123, 45
+  size: 62, 48
+  orig: 63, 48
+  offset: 1, 0
+  index: -1
+Volosy_2
+  rotate: true
+  xy: 933, 158
+  size: 57, 116
+  orig: 57, 116
+  offset: 0, 0
+  index: -1
+Volosy_3
+  rotate: true
+  xy: 816, 93
+  size: 62, 126
+  orig: 62, 126
+  offset: 0, 0
+  index: -1
+Volosy_4
+  rotate: true
+  xy: 1173, 63
+  size: 56, 46
+  orig: 56, 47
+  offset: 0, 1
+  index: -1

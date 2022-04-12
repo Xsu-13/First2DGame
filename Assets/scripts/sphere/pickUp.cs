@@ -24,8 +24,13 @@ public class pickUp : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(potionSc.count != null)
             count = potionSc.count.Value;
+        */
+
+        if (potSc.count != null)
+            count = potSc.count;
     }
 
 }
