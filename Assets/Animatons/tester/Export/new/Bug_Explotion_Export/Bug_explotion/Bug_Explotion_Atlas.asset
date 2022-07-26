@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Bug_Explotion_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 412f539f035a0264182d0815a4af7450, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 390842ad8975a3246a45297a3f0eb763, type: 2}
+  - {fileID: 2100000, guid: 1fb975fb772eb1e418f423761093cfda, type: 2}
+  - {fileID: 2100000, guid: 6a4d461f17c867440bd49f641a7448d0, type: 2}
+  - {fileID: 2100000, guid: ebb917a8405f6dd42af75a382953123c, type: 2}
+  - {fileID: 2100000, guid: db61a321fc89b00449962513feb4a3e0, type: 2}
+  - {fileID: 2100000, guid: f12c0b2e1cdfe5645b9c4b3abd393fd8, type: 2}

@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class HackCore : MonoBehaviour
 {
-    GameObject[,] cells = new GameObject[5, 5];
+    public Sprite image;
+
+    public delegate void EventHandler();
+    public delegate IEnumerator EventHadlerIEnumerator();
+    public event EventHandler ResetHack;
+    public event EventHandler Win;
+
+    public GameObject[,] cells = new GameObject[5, 5];
     [SerializeField] GameObject hackParent;
     List<int> activatedPhase = new List<int>();
     int phaseCount = 0;
 
     [SerializeField] Slider progresSlider;
-    [SerializeField] List<GameObject> phaseProgress;
+    public bool SeeColor;
+    //[SerializeField] List<GameObject> phaseProgress;
     
     //pubic for test
     public int startX;
@@ -50,6 +58,9 @@ public class HackCore : MonoBehaviour
                     //activatedPhase.Add(cell.index);
                     phaseCount += 1;
                 }
+
+                cell.x = i;
+                cell.y = k;
                 cells[k, i] = child;
             }
             k += 1;
@@ -57,6 +68,12 @@ public class HackCore : MonoBehaviour
         currentX = startX;
         currentY = startY;
         progresSlider.value = 0;
+        foreach(GameObject cell in cells)
+        {
+            HackCell hackCell = cell.GetComponent<HackCell>();
+            hackCell.SeeColor = SeeColor;
+        }
+
     }
 
     // Update is called once per frame
@@ -105,15 +122,23 @@ public class HackCore : MonoBehaviour
                         currentX = x;
                         currentY = y;
                         UpdateEachColor();
-                        cell.image.color = Color.black;
+                        cell.image.sprite = image;
+                        cell.image.color = new Color(255, 255, 255, 255);
+                        //cell.image.color = Color.black;
                         break;
                     }
                 case HackCellType.Danger:
                     {
                         currentX = startX;
                         currentY = startY;
+                        //cell.image.sprite = image;
+                        //cell.image.color = new Color(255, 255, 255, 255);
+                        //cell.image.color = Color.black;
                         activatedPhase.Clear();
                         progresSlider.value = 0;
+
+                        ResetHack?.Invoke();
+
                         Debug.Log("Danger");
                         break;
                     }
@@ -122,7 +147,10 @@ public class HackCore : MonoBehaviour
                         currentX = x;
                         currentY = y;
                         UpdateEachColor();
-                        cell.image.color = Color.black;
+                        cell.image.sprite = image;
+                        cell.image.color = new Color(255, 255, 255,255);
+                        //cell.image.color = Color.black;
+                        cell.wasActivated = true;
 
                         if(!activatedPhase.Contains(cell.index))
                         {
@@ -131,10 +159,10 @@ public class HackCore : MonoBehaviour
                         LeanTween.value(progresSlider.gameObject, progresSlider.value, (float)activatedPhase.Count / phaseCount, 1f).setEaseInOutQuart()
                             .setOnUpdate((value) => progresSlider.value = value);
                         //progresSlider.value = (float)activatedPhase.Count / phaseCount;
-                        Debug.Log(activatedPhase.Count);
                         if (activatedPhase.Count == phaseCount )
                         {
                             progresSlider.value = 1;
+                            Win?.Invoke();
                             Debug.Log("Winnnn");
                         }
                         break;

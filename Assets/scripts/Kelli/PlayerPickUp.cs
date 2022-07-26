@@ -99,9 +99,14 @@ public class PlayerPickUp : MonoBehaviour
             Destroy(collision.gameObject);
             
         }
+
+        
     }
 
-   
+    
+    
+
+
 
     public GameObject InstantiateInInventory(GameObject potionButton, int index, PotionType type, int count)
     {

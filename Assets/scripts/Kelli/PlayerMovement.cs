@@ -161,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                Debug.Log("ENd OF Shield");
                 //gameObject.layer = 8;
                 shield = false;
                 mat.SetFloat("_FillPhase", 0f);
@@ -318,11 +319,13 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
-    void Jump()
+    public void Jump(float? force = null)
     {
+        var endForce = force ?? jumpForce;
+
         animator.SetBool("Jump", true);
         jump = true;
-        rb.velocity = Vector2.up * jumpForce;
+        rb.velocity = Vector2.up * endForce;
         
     }
     void Switch()
@@ -340,6 +343,8 @@ public class PlayerMovement : MonoBehaviour
         partner.SetActive(true);
         //new
         PlayerMovement partnerMove = partner.GetComponent<PlayerMovement>();
+
+        shieldTimer = timerShield;
         partnerMove.time = time;
         //partner.layer = 8;
         gameObject.SetActive(false);

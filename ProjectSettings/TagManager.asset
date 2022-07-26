@@ -14,6 +14,8 @@ TagManager:
   - inventory
   - potion
   - invisPlayer
+  - groundCheck
+  - chest
   layers:
   - Default
   - TransparentFX

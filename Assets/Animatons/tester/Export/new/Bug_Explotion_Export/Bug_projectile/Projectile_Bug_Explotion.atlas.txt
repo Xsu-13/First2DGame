@@ -1,0 +1,55 @@
+
+Projectile_Bug_Explotion.png
+size: 1880,1156
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effects/Projectile/Projectile_00000
+  rotate: true
+  xy: 757, 404
+  size: 750, 379
+  orig: 1000, 1000
+  offset: 139, 296
+  index: -1
+Effects/Projectile/Projectile_00001
+  rotate: false
+  xy: 1138, 770
+  size: 740, 384
+  orig: 1000, 1000
+  offset: 158, 297
+  index: -1
+Effects/Projectile/Projectile_00002
+  rotate: false
+  xy: 1138, 380
+  size: 730, 388
+  orig: 1000, 1000
+  offset: 161, 300
+  index: -1
+Effects/Projectile/Projectile_00003
+  rotate: true
+  xy: 377, 377
+  size: 777, 378
+  orig: 1000, 1000
+  offset: 116, 303
+  index: -1
+Effects/Projectile/Projectile_00004
+  rotate: true
+  xy: 2, 356
+  size: 798, 373
+  orig: 1000, 1000
+  offset: 93, 304
+  index: -1
+Effects/Projectile/Projectile_00005
+  rotate: false
+  xy: 1098, 5
+  size: 700, 373
+  orig: 1000, 1000
+  offset: 190, 306
+  index: -1
+Effects/Projectile/Projectile_00006
+  rotate: false
+  xy: 377, 2
+  size: 719, 373
+  orig: 1000, 1000
+  offset: 167, 306
+  index: -1

@@ -1,0 +1,306 @@
+
+kelli_projectile_fireball.png
+size: 3037,3046
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00001
+  rotate: true
+  xy: 718, 2881
+  size: 163, 165
+  orig: 350, 350
+  offset: 99, 97
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00002
+  rotate: true
+  xy: 885, 2821
+  size: 223, 238
+  orig: 350, 350
+  offset: 64, 57
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00003
+  rotate: true
+  xy: 1400, 2790
+  size: 254, 266
+  orig: 350, 350
+  offset: 50, 44
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00004
+  rotate: true
+  xy: 1668, 2774
+  size: 270, 293
+  orig: 350, 350
+  offset: 40, 27
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00005
+  rotate: true
+  xy: 1963, 2774
+  size: 270, 286
+  orig: 350, 350
+  offset: 38, 27
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00006
+  rotate: true
+  xy: 1125, 2794
+  size: 250, 273
+  orig: 350, 350
+  offset: 50, 33
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00007
+  rotate: true
+  xy: 500, 2889
+  size: 155, 216
+  orig: 350, 350
+  offset: 110, 35
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00008
+  rotate: false
+  xy: 333, 2904
+  size: 165, 140
+  orig: 350, 350
+  offset: 111, 111
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00009
+  rotate: false
+  xy: 201, 2919
+  size: 130, 125
+  orig: 350, 350
+  offset: 116, 122
+  index: -1
+Explotion_Fire_Exp/Comp 1/Exp_Exp__00010
+  rotate: false
+  xy: 71, 2923
+  size: 128, 121
+  orig: 350, 350
+  offset: 117, 123
+  index: -1
+Fire_2/Fire_Projektile_00000
+  rotate: false
+  xy: 2, 2222
+  size: 837, 332
+  orig: 1000, 1000
+  offset: 118, 318
+  index: -1
+Fire_2/Fire_Projektile_00001
+  rotate: false
+  xy: 2, 1438
+  size: 841, 337
+  orig: 1000, 1000
+  offset: 117, 312
+  index: -1
+Fire_2/Fire_Projektile_00002
+  rotate: false
+  xy: 2, 2556
+  size: 850, 323
+  orig: 1000, 1000
+  offset: 108, 312
+  index: -1
+Fire_2/Fire_Projektile_00003
+  rotate: false
+  xy: 941, 1769
+  size: 856, 335
+  orig: 1000, 1000
+  offset: 102, 307
+  index: -1
+Fire_2/Fire_Projektile_00004
+  rotate: false
+  xy: 841, 2113
+  size: 854, 332
+  orig: 1000, 1000
+  offset: 103, 312
+  index: -1
+Fire_2/Fire_Projektile_00005
+  rotate: false
+  xy: 1799, 1768
+  size: 874, 336
+  orig: 1000, 1000
+  offset: 86, 311
+  index: -1
+Fire_2/Fire_Projektile_00006
+  rotate: false
+  xy: 1769, 2441
+  size: 891, 331
+  orig: 1000, 1000
+  offset: 68, 316
+  index: -1
+Fire_2/Fire_Projektile_00007
+  rotate: false
+  xy: 1698, 1421
+  size: 903, 345
+  orig: 1000, 1000
+  offset: 56, 307
+  index: -1
+Fire_2/Fire_Projektile_00008
+  rotate: false
+  xy: 1778, 365
+  size: 918, 355
+  orig: 1000, 1000
+  offset: 41, 298
+  index: -1
+Fire_2/Fire_Projektile_00010
+  rotate: false
+  xy: 2, 11
+  size: 946, 355
+  orig: 1000, 1000
+  offset: 14, 294
+  index: -1
+Fire_2/Fire_Projektile_00011
+  rotate: false
+  xy: 1791, 722
+  size: 945, 349
+  orig: 1000, 1000
+  offset: 15, 295
+  index: -1
+Fire_2/Fire_Projektile_00012
+  rotate: false
+  xy: 1697, 2106
+  size: 942, 333
+  orig: 1000, 1000
+  offset: 17, 297
+  index: -1
+Fire_2/Fire_Projektile_00013
+  rotate: false
+  xy: 2, 1777
+  size: 937, 334
+  orig: 1000, 1000
+  offset: 22, 298
+  index: -1
+Fire_2/Fire_Projektile_00014
+  rotate: false
+  xy: 854, 2447
+  size: 913, 325
+  orig: 1000, 1000
+  offset: 47, 304
+  index: -1
+Fire_2/Fire_Projektile_00015
+  rotate: false
+  xy: 2, 1080
+  size: 896, 345
+  orig: 1000, 1000
+  offset: 65, 288
+  index: -1
+Fire_2/Fire_Projektile_00016
+  rotate: false
+  xy: 900, 1074
+  size: 893, 345
+  orig: 1000, 1000
+  offset: 65, 283
+  index: -1
+Fire_2/Fire_Projektile_00017
+  rotate: false
+  xy: 2, 369
+  size: 892, 354
+  orig: 1000, 1000
+  offset: 67, 273
+  index: -1
+Fire_2/Fire_Projektile_00018
+  rotate: false
+  xy: 1865, 2
+  size: 865, 361
+  orig: 1000, 1000
+  offset: 93, 273
+  index: -1
+Fire_2/Fire_Projektile_00021
+  rotate: false
+  xy: 879, 725
+  size: 910, 347
+  orig: 1000, 1000
+  offset: 48, 311
+  index: -1
+Fire_2/Fire_Projektile_00022
+  rotate: false
+  xy: 950, 5
+  size: 913, 358
+  orig: 1000, 1000
+  offset: 47, 305
+  index: -1
+Fire_2/Fire_Projektile_00025
+  rotate: false
+  xy: 896, 368
+  size: 880, 355
+  orig: 1000, 1000
+  offset: 77, 303
+  index: -1
+Fire_2/Fire_Projektile_00026
+  rotate: false
+  xy: 2, 730
+  size: 875, 348
+  orig: 1000, 1000
+  offset: 82, 303
+  index: -1
+Fire_2/Fire_Projektile_00027
+  rotate: false
+  xy: 1795, 1073
+  size: 859, 346
+  orig: 1000, 1000
+  offset: 97, 309
+  index: -1
+Fire_2/Fire_Projektile_00028
+  rotate: true
+  xy: 2675, 1347
+  size: 855, 360
+  orig: 1000, 1000
+  offset: 101, 310
+  index: -1
+Fire_2/Fire_Projektile_00029
+  rotate: false
+  xy: 845, 1427
+  size: 851, 340
+  orig: 1000, 1000
+  offset: 104, 321
+  index: -1
+Fire_2/Fire_Projektile_00030
+  rotate: true
+  xy: 2662, 2204
+  size: 840, 346
+  orig: 1000, 1000
+  offset: 115, 318
+  index: -1
+Projectile/Projectile_Fire_Core
+  rotate: false
+  xy: 2, 3014
+  size: 67, 30
+  orig: 83, 45
+  offset: 14, 8
+  index: -1
+
+kelli_projectile_fireball2.png
+size: 1852,935
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fire_2/Fire_Projektile_00009
+  rotate: true
+  xy: 2, 2
+  size: 931, 365
+  orig: 1000, 1000
+  offset: 30, 288
+  index: -1
+Fire_2/Fire_Projektile_00019
+  rotate: true
+  xy: 1108, 59
+  size: 874, 377
+  orig: 1000, 1000
+  offset: 84, 272
+  index: -1
+Fire_2/Fire_Projektile_00020
+  rotate: true
+  xy: 1487, 27
+  size: 906, 363
+  orig: 1000, 1000
+  offset: 53, 295
+  index: -1
+Fire_2/Fire_Projektile_00023
+  rotate: true
+  xy: 742, 22
+  size: 911, 364
+  orig: 1000, 1000
+  offset: 48, 299
+  index: -1
+Fire_2/Fire_Projektile_00024
+  rotate: true
+  xy: 369, 28
+  size: 905, 371
+  orig: 1000, 1000
+  offset: 54, 291
+  index: -1
